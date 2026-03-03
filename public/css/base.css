@@ -1,0 +1,96 @@
+/* base.css - Core variables, reset, and base styling */
+:root {
+    /* Premium Palette: Raycast/Linear Inspired */
+    --bg-base: #0B0B0E;
+    --surface-1: #111114;
+    --surface-2: #16161A;
+    
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --text-muted: rgba(255, 255, 255, 0.3);
+    
+    --accent: #FF3B3B;
+    --accent-hover: #FF5252;
+    --accent-active: #D32F2F;
+    --accent-glow: rgba(255, 59, 59, 0.1);
+    
+    --status-ac: #2ECC71;
+    --status-wa: #FF3B3B;
+    --status-tle: #F39C12;
+    --status-info: #3498DB;
+    
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --border-active: rgba(255, 255, 255, 0.15);
+    
+    /* Effects: Minimal */
+    --glass-blur: blur(20px);
+    --shadow-low: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --shadow-high: 0 20px 40px rgba(0, 0, 0, 0.4);
+    
+    /* Spacing: Raycast Hierarchy */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 48px;
+    --space-xxl: 80px;
+    
+    /* Border Radius: Professional */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'IBM Plex Sans', -apple-system, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+h1, h2, h3, .brand-text {
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+code, pre, .editor-font {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Background System: Neutralized for Premium Feel */
+.arena-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% -20%, rgba(255, 59, 59, 0.03), transparent 60%);
+}
+
+.arena-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(var(--border-glass) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border-glass) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.02;
+}
+
+.arena-glow, .blob {
+    display: none; /* Removed gaming glows */
+}

@@ -1,0 +1,170 @@
+/* layout.css - Navigation, global containers, and page structures */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--space-md) var(--space-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(11, 11, 14, 0.8);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border-glass);
+    transition: all 0.2s ease;
+}
+
+.navbar.scrolled {
+    padding: var(--space-sm) var(--space-xl);
+    background: rgba(11, 11, 14, 0.95);
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.brand-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+.brand-text {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.2s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--text-primary);
+}
+
+/* Global Container */
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-xxl) 0;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-headline {
+    font-size: 72px;
+    line-height: 1.05;
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    color: #fff;
+}
+
+.hero-headline span {
+    color: var(--accent);
+}
+
+.hero-subhead {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Problem Page Grid Layout */
+.arena-layout {
+    display: grid !important;
+    grid-template-columns: 60% 40% !important;
+    height: calc(100vh - 64px) !important;
+}
+
+@media (max-width: 1200px) {
+    .arena-layout {
+        grid-template-columns: 50% 50% !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .arena-layout {
+        grid-template-columns: 100% !important;
+    }
+}
+
+/* Fullscreen Compiler Support */
+body.editor-fullscreen .navbar {
+    display: none !important;
+}
+
+body.editor-fullscreen .arena-layout {
+    height: 100vh !important;
+    grid-template-columns: 100% !important;
+}
+
+body.editor-fullscreen #problemPanel,
+body.editor-fullscreen #resizer {
+    display: none !important;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1024px) {
+    .navbar { padding: var(--space-md) var(--space-lg); }
+    .hero-headline { font-size: 48px; }
+}
+
+@media (max-width: 600px) {
+    .nav-links { display: none; } /* Consider a mobile menu later */
+    .hero-headline { font-size: 40px; }
+    .main-wrapper { padding: 0 var(--space-lg); }
+}

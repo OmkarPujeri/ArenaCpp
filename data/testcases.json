@@ -1,0 +1,599 @@
+[
+  {
+    "id": "missing-element-finder",
+    "testCases": [
+      { "input": "5\n1 2 4 5", "output": "3" },
+      { "input": "3\n2 3", "output": "1" },
+      { "input": "4\n1 2 3", "output": "4" },
+      { "input": "2\n1", "output": "2" },
+      { "input": "10\n1 2 3 4 5 6 7 8 10", "output": "9" }
+    ]
+  },
+  {
+    "id": "string-char-frequency",
+    "testCases": [
+      { "input": "aaaa", "output": "true" },
+      { "input": "aaabbc", "output": "true" },
+      { "input": "aabb", "output": "false" },
+      { "input": "z", "output": "true" },
+      { "input": "abc", "output": "false" }
+    ]
+  },
+  {
+    "id": "prefix-sum-equilibrium",
+    "testCases": [
+      { "input": "5\n1 3 5 2 2", "output": "2" },
+      { "input": "4\n1 2 3 4", "output": "-1" },
+      { "input": "3\n0 5 0", "output": "0" },
+      { "input": "3\n-1 1 0", "output": "2" },
+      { "input": "3\n10000 0 10000", "output": "1" }
+    ]
+  },
+  {
+    "id": "valid-anagram-pair",
+    "testCases": [
+      { "input": "listen\nsilent", "output": "true" },
+      { "input": "a\nab", "output": "false" },
+      { "input": "aabb\nabbb", "output": "false" },
+      { "input": "z\nz", "output": "true" },
+      { "input": "rat\ncar", "output": "false" }
+    ]
+  },
+  {
+    "id": "move-zeroes-end",
+    "testCases": [
+      { "input": "5\n0 1 0 3 12", "output": "1 3 12 0 0" },
+      { "input": "3\n0 0 0", "output": "0 0 0" },
+      { "input": "2\n4 5", "output": "4 5" },
+      { "input": "2\n1 0", "output": "1 0" },
+      { "input": "1\n0", "output": "0" }
+    ]
+  },
+  {
+    "id": "max-consecutive-ones",
+    "testCases": [
+      { "input": "6\n1 1 0 1 1 1", "output": "3" },
+      { "input": "4\n1 1 1 1", "output": "4" },
+      { "input": "3\n0 0 0", "output": "0" },
+      { "input": "5\n1 0 1 0 1", "output": "1" },
+      { "input": "1\n1", "output": "1" }
+    ]
+  },
+  {
+    "id": "binary-search-insert",
+    "testCases": [
+      { "input": "4\n1 3 5 6\n5", "output": "2" },
+      { "input": "4\n1 3 5 6\n2", "output": "1" },
+      { "input": "4\n1 3 5 6\n7", "output": "4" },
+      { "input": "4\n1 3 5 6\n0", "output": "0" },
+      { "input": "1\n1\n0", "output": "0" }
+    ]
+  },
+  {
+    "id": "palindrome-number-logic",
+    "testCases": [
+      { "input": "121", "output": "true" },
+      { "input": "-121", "output": "false" },
+      { "input": "10", "output": "false" },
+      { "input": "7", "output": "true" },
+      { "input": "12321", "output": "true" }
+    ]
+  },
+  {
+    "id": "remove-element-val",
+    "testCases": [
+      { "input": "4\n3 2 2 3\n3", "output": "2" },
+      { "input": "3\n2 2 2\n2", "output": "0" },
+      { "input": "3\n1 2 3\n4", "output": "3" },
+      { "input": "0\n1", "output": "0" },
+      { "input": "2\n100 100\n100", "output": "0" }
+    ]
+  },
+  {
+    "id": "valid-perfect-square",
+    "testCases": [
+      { "input": "16", "output": "true" },
+      { "input": "14", "output": "false" },
+      { "input": "1", "output": "true" },
+      { "input": "4", "output": "true" },
+      { "input": "2147483647", "output": "false" }
+    ]
+  },
+  {
+    "id": "longest-substring-no-repeat",
+    "testCases": [
+      { "input": "abcabcbb", "output": "3" },
+      { "input": "bbbbb", "output": "1" },
+      { "input": "pwwkew", "output": "3" },
+      { "input": "", "output": "0" },
+      { "input": "dvdf", "output": "3" }
+    ]
+  },
+  {
+    "id": "container-with-most-water",
+    "testCases": [
+      { "input": "9\n1 8 6 2 5 4 8 3 7", "output": "49" },
+      { "input": "2\n1 1", "output": "1" },
+      { "input": "5\n5 4 3 2 1", "output": "6" },
+      { "input": "2\n1 2", "output": "1" },
+      { "input": "4\n10 1 1 10", "output": "30" }
+    ]
+  },
+  {
+    "id": "subarray-sum-k",
+    "testCases": [
+      { "input": "3\n1 1 1\n2", "output": "2" },
+      { "input": "3\n1 -1 0\n0", "output": "3" },
+      { "input": "2\n1 2\n5", "output": "0" },
+      { "input": "3\n0 0 0\n0", "output": "6" },
+      { "input": "1\n5\n5", "output": "1" }
+    ]
+  },
+  {
+    "id": "house-robber-dp",
+    "testCases": [
+      { "input": "4\n1 2 3 1", "output": "4" },
+      { "input": "5\n2 7 9 3 1", "output": "12" },
+      { "input": "4\n10 10 10 10", "output": "20" },
+      { "input": "1\n100", "output": "100" },
+      { "input": "2\n10 50", "output": "50" }
+    ]
+  },
+  {
+    "id": "find-all-anagrams",
+    "testCases": [
+      { "input": "cbaebabacd\nabc", "output": "0 6" },
+      { "input": "abab\nab", "output": "0 1 2" },
+      { "input": "hello\nworld", "output": "" },
+      { "input": "a\nab", "output": "" },
+      { "input": "aaaaa\naa", "output": "0 1 2 3" }
+    ]
+  },
+  {
+    "id": "course-schedule-ii",
+    "testCases": [
+      { "input": "2 1\n1 0", "output": "0 1" },
+      { "input": "4 4\n1 0\n2 0\n3 1\n3 2", "output": "0 1 2 3" },
+      { "input": "2 2\n1 0\n0 1", "output": "" },
+      { "input": "3 0", "output": "0 1 2" },
+      { "input": "1 1\n0 0", "output": "" }
+    ]
+  },
+  {
+    "id": "jump-game-logic",
+    "testCases": [
+      { "input": "5\n2 3 1 1 4", "output": "true" },
+      { "input": "5\n3 2 1 0 4", "output": "false" },
+      { "input": "2\n0 1", "output": "false" },
+      { "input": "1\n0", "output": "true" },
+      { "input": "3\n10 0 0", "output": "true" }
+    ]
+  },
+  {
+    "id": "k-closest-points",
+    "testCases": [
+      { "input": "2 1\n1 3\n-2 2", "output": "-2 2" },
+      { "input": "3 2\n3 3\n5 -1\n-2 4", "output": "3 3 -2 4" },
+      { "input": "2 1\n1 0\n0 1", "output": "1 0" },
+      { "input": "2 2\n1 1\n2 2", "output": "1 1 2 2" },
+      { "input": "2 1\n0 0\n10 10", "output": "0 0" }
+    ]
+  },
+  {
+    "id": "string-to-integer-atoi",
+    "testCases": [
+      { "input": "42", "output": "42" },
+      { "input": "   -42", "output": "-42" },
+      { "input": "91283472332", "output": "2147483647" },
+      { "input": "4193 with words", "output": "4193" },
+      { "input": "words and 987", "output": "0" }
+    ]
+  },
+  {
+    "id": "unique-paths-grid",
+    "testCases": [
+      { "input": "3 7", "output": "28" },
+      { "input": "3 2", "output": "3" },
+      { "input": "3 3", "output": "6" },
+      { "input": "1 10", "output": "1" },
+      { "input": "5 1", "output": "1" }
+    ]
+  },
+  {
+    "id": "rotting-oranges-bfs",
+    "testCases": [
+      { "input": "3 3\n2 1 1\n1 1 0\n0 1 1", "output": "4" },
+      { "input": "3 3\n2 1 1\n0 1 1\n1 0 1", "output": "-1" },
+      { "input": "1 1\n0", "output": "0" },
+      { "input": "1 1\n2", "output": "0" },
+      { "input": "3 3\n2 0 1\n0 0 0\n0 0 0", "output": "-1" }
+    ]
+  },
+  {
+    "id": "longest-palindromic-substring",
+    "testCases": [
+      { "input": "babad", "output": "bab" },
+      { "input": "cbbd", "output": "bb" },
+      { "input": "racecar", "output": "racecar" },
+      { "input": "abc", "output": "a" },
+      { "input": "aaaaa", "output": "aaaaa" }
+    ]
+  },
+  {
+    "id": "trapping-rain-water",
+    "testCases": [
+      { "input": "12\n0 1 0 2 1 0 1 3 2 1 2 1", "output": "6" },
+      { "input": "3\n3 0 3", "output": "3" },
+      { "input": "4\n1 2 3 4", "output": "0" },
+      { "input": "6\n4 2 0 3 2 5", "output": "9" },
+      { "input": "3\n0 0 0", "output": "0" }
+    ]
+  },
+  {
+    "id": "median-two-sorted-arrays",
+    "testCases": [
+      { "input": "2\n1 3\n1\n2", "output": "2.0" },
+      { "input": "2\n1 2\n2\n3 4", "output": "2.5" },
+      { "input": "0\n1\n1", "output": "1.0" },
+      { "input": "2\n1 2\n2\n8 9", "output": "5.0" },
+      { "input": "2\n1 1\n2\n1 1", "output": "1.0" }
+    ]
+  },
+  {
+    "id": "word-break-ii-recursion",
+    "testCases": [
+      { "input": "catsanddog\n5\ncat cats and sand dog", "output": "cat sand dog\ncats and dog" },
+      { "input": "apple\n1\npear", "output": "" },
+      { "input": "aaaa\n2\na aa", "output": "a a a a\na a aa\na aa a\naa a a\naa aa" },
+      { "input": "pineapple\n3\npine apple pineapple", "output": "pine apple\npineapple" },
+      { "input": "ab\n2\na b", "output": "a b" }
+    ]
+  },
+  {
+    "id": "minimum-window-substring",
+    "testCases": [
+      { "input": "ADOBECODEBANC\nABC", "output": "BANC" },
+      { "input": "a\na", "output": "a" },
+      { "input": "a\naa", "output": "" },
+      { "input": "ab\nab", "output": "ab" },
+      { "input": "aaabbb\naab", "output": "aab" }
+    ]
+  },
+  {
+    "id": "edit-distance-dp",
+    "testCases": [
+      { "input": "horse\nros", "output": "3" },
+      { "input": "intention\nexecution", "output": "5" },
+      { "input": "\nabc", "output": "3" },
+      { "input": "abc\nabc", "output": "0" },
+      { "input": "abc\nabd", "output": "1" }
+    ]
+  },
+  {
+    "id": "sudoku-solver-hard",
+    "testCases": [
+      { "input": "5 3 0 0 7 0 0 0 0\n6 0 0 1 9 5 0 0 0\n0 9 8 0 0 0 0 6 0\n8 0 0 0 6 0 0 0 3\n4 0 0 8 0 3 0 0 1\n7 0 0 0 2 0 0 0 6\n0 6 0 0 0 0 2 8 0\n0 0 0 4 1 9 0 0 5\n0 0 0 0 8 0 0 7 9", "output": "5 3 4 6 7 8 9 1 2\n6 7 2 1 9 5 3 4 8\n1 9 8 3 4 2 5 6 7\n8 5 9 7 6 1 4 2 3\n4 2 6 8 5 3 7 9 1\n7 1 3 9 2 4 8 5 6\n9 6 1 5 3 7 2 8 4\n2 8 7 4 1 9 6 3 5\n3 4 5 2 8 6 1 7 9" },
+      { "input": "0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0", "output": "1 2 3 4 5 6 7 8 9\n4 5 6 7 8 9 1 2 3\n7 8 9 1 2 3 4 5 6\n2 3 1 5 6 4 8 9 7\n5 6 4 8 9 7 2 3 1\n8 9 7 2 3 1 5 6 4\n3 1 2 6 4 5 9 7 8\n6 4 5 9 7 8 3 1 2\n9 7 8 3 1 2 6 4 5" }
+    ]
+  },
+  {
+    "id": "largest-rectangle-histogram",
+    "testCases": [
+      { "input": "6\n2 1 5 6 2 3", "output": "10" },
+      { "input": "5\n1 2 3 4 5", "output": "9" },
+      { "input": "5\n5 4 3 2 1", "output": "9" },
+      { "input": "4\n5 5 5 5", "output": "20" },
+      { "input": "1\n10", "output": "10" }
+    ]
+  },
+  {
+    "id": "merge-k-sorted-lists",
+    "testCases": [
+      { "input": "3\n3 1 4 5\n3 1 3 4\n2 2 6", "output": "1 1 2 3 4 4 5 6" },
+      { "input": "0", "output": "" },
+      { "input": "2\n0\n0", "output": "" },
+      { "input": "3\n1 1\n1 2\n1 3", "output": "1 2 3" },
+      { "input": "2\n2 -10 10\n2 -5 5", "output": "-10 -5 5 10" }
+    ]
+  },
+  {
+    "id": "rotate-array-k",
+    "testCases": [
+      { "input": "7 3\n1 2 3 4 5 6 7", "output": "5 6 7 1 2 3 4" },
+      { "input": "4 2\n1 2 3 4", "output": "3 4 1 2" },
+      { "input": "3 0\n1 2 3", "output": "1 2 3" },
+      { "input": "2 5\n1 2", "output": "2 1" },
+      { "input": "1 10\n99", "output": "99" }
+    ]
+  },
+  {
+    "id": "isomorphic-strings",
+    "testCases": [
+      { "input": "egg\nadd", "output": "true" },
+      { "input": "foo\nbar", "output": "false" },
+      { "input": "paper\ntitle", "output": "true" },
+      { "input": "ab\naa", "output": "false" },
+      { "input": "a\na", "output": "true" }
+    ]
+  },
+  {
+    "id": "buy-sell-stock-i",
+    "testCases": [
+      { "input": "6\n7 1 5 3 6 4", "output": "5" },
+      { "input": "5\n7 6 4 3 1", "output": "0" },
+      { "input": "2\n1 5", "output": "4" },
+      { "input": "2\n5 1", "output": "0" },
+      { "input": "4\n2 1 2 1", "output": "1" }
+    ]
+  },
+  {
+    "id": "valid-parentheses-simple",
+    "testCases": [
+      { "input": "()[]{}", "output": "true" },
+      { "input": "(]", "output": "false" },
+      { "input": "([)]", "output": "false" },
+      { "input": "{[]}", "output": "true" },
+      { "input": "((", "output": "false" }
+    ]
+  },
+  {
+    "id": "single-number-bit",
+    "testCases": [
+      { "input": "3\n2 2 1", "output": "1" },
+      { "input": "5\n4 1 2 1 2", "output": "4" },
+      { "input": "1\n7", "output": "7" },
+      { "input": "7\n-1 -1 -2 -2 5 3 3", "output": "5" },
+      { "input": "3\n0 0 1", "output": "1" }
+    ]
+  },
+  {
+    "id": "merge-sorted-array-inline",
+    "testCases": [
+      { "input": "3 3\n1 2 3\n2 5 6", "output": "1 2 2 3 5 6" },
+      { "input": "1 0\n1\n", "output": "1" },
+      { "input": "0 1\n\n1", "output": "1" },
+      { "input": "2 2\n1 5\n2 3", "output": "1 2 3 5" },
+      { "input": "3 3\n-5 -2 0\n-3 1 4", "output": "-5 -3 -2 0 1 4" }
+    ]
+  },
+  {
+    "id": "climbing-stairs",
+    "testCases": [
+      { "input": "2", "output": "2" },
+      { "input": "3", "output": "3" },
+      { "input": "1", "output": "1" },
+      { "input": "4", "output": "5" },
+      { "input": "5", "output": "8" }
+    ]
+  },
+  {
+    "id": "pascals-triangle",
+    "testCases": [
+      { "input": "3", "output": "1\n1 1\n1 2 1" },
+      { "input": "1", "output": "1" },
+      { "input": "5", "output": "1\n1 1\n1 2 1\n1 3 3 1\n1 4 6 4 1" },
+      { "input": "2", "output": "1\n1 1" },
+      { "input": "4", "output": "1\n1 1\n1 2 1\n1 3 3 1" }
+    ]
+  },
+  {
+    "id": "power-of-two",
+    "testCases": [
+      { "input": "16", "output": "true" },
+      { "input": "3", "output": "false" },
+      { "input": "1", "output": "true" },
+      { "input": "0", "output": "false" },
+      { "input": "1024", "output": "true" }
+    ]
+  },
+  {
+    "id": "reverse-vowels",
+    "testCases": [
+      { "input": "hello", "output": "holle" },
+      { "input": "leetcode", "output": "leotcede" },
+      { "input": "aA", "output": "Aa" },
+      { "input": "rhythm", "output": "rhythm" },
+      { "input": "ai", "output": "ia" }
+    ]
+  },
+  {
+    "id": "three-sum-zero",
+    "testCases": [
+      { "input": "6\n-1 0 1 2 -1 -4", "output": "-1 -1 2\n-1 0 1" },
+      { "input": "3\n0 1 1", "output": "" },
+      { "input": "3\n0 0 0", "output": "0 0 0" },
+      { "input": "5\n-2 0 0 2 2", "output": "-2 0 2" },
+      { "input": "4\n1 2 -2 -1", "output": "-2 1 1\n-1 2 -1" }
+    ]
+  },
+  {
+    "id": "group-anagrams",
+    "testCases": [
+      { "input": "6\neat tea tan ate nat bat", "output": "ate eat tea\nnat tan\nbat" },
+      { "input": "1\na", "output": "a" },
+      { "input": "3\nabc bca cab", "output": "abc bca cab" },
+      { "input": "4\na b a b", "output": "a a\nb b" },
+      { "input": "2\nlisten silent", "output": "listen silent" }
+    ]
+  },
+  {
+    "id": "coin-change-min",
+    "testCases": [
+      { "input": "3\n1 2 5\n11", "output": "3" },
+      { "input": "1\n2\n3", "output": "-1" },
+      { "input": "1\n1\n0", "output": "0" },
+      { "input": "2\n2 5\n7", "output": "2" },
+      { "input": "3\n186 419 83\n6249", "output": "20" }
+    ]
+  },
+  {
+    "id": "longest-consecutive-sequence",
+    "testCases": [
+      { "input": "6\n100 4 200 1 3 2", "output": "4" },
+      { "input": "10\n0 3 7 2 5 8 4 6 0 1", "output": "9" },
+      { "input": "1\n10", "output": "1" },
+      { "input": "4\n1 2 2 3", "output": "3" },
+      { "input": "3\n10 5 20", "output": "1" }
+    ]
+  },
+  {
+    "id": "top-k-frequent-elements",
+    "testCases": [
+      { "input": "6 2\n1 1 1 2 2 3", "output": "1 2" },
+      { "input": "1 1\n1", "output": "1" },
+      { "input": "4 2\n-1 -1 2 2", "output": "-1 2" },
+      { "input": "5 1\n1 2 3 4 5", "output": "1" },
+      { "input": "5 2\n1 1 2 2 3", "output": "1 2" }
+    ]
+  },
+  {
+    "id": "number-of-islands",
+    "testCases": [
+      { "input": "4 5\n11110\n11010\n11000\n00000", "output": "1" },
+      { "input": "4 5\n11000\n11000\n00100\n00011", "output": "3" },
+      { "input": "1 1\n0", "output": "0" },
+      { "input": "3 3\n101\n010\n101", "output": "5" },
+      { "input": "2 2\n11\n11", "output": "1" }
+    ]
+  },
+  {
+    "id": "generate-parentheses",
+    "testCases": [
+      { "input": "3", "output": "((()))\n(()())\n(())()\n()(())\n()()()" },
+      { "input": "1", "output": "()" },
+      { "input": "2", "output": "(())\n()()" },
+      { "input": "0", "output": "" },
+      { "input": "4", "output": "(((())))\n((()()))\n((())())\n(( ))(())\n(( ))( )()\n(()(()))\n(()()())\n(()())()\n(())(())\n(())()()\n()((()))\n()(()())\n()(())()\n()()(())\n()()()()" }
+    ]
+  },
+  {
+    "id": "product-except-self",
+    "testCases": [
+      { "input": "4\n1 2 3 4", "output": "24 12 8 6" },
+      { "input": "5\n-1 1 0 -3 3", "output": "0 0 9 0 0" },
+      { "input": "2\n10 20", "output": "20 10" },
+      { "input": "3\n0 0 1", "output": "0 0 0" },
+      { "input": "3\n1 2 3", "output": "6 3 2" }
+    ]
+  },
+  {
+    "id": "kth-largest-element",
+    "testCases": [
+      { "input": "6 2\n3 2 3 1 2 4 5 5 6", "output": "5" },
+      { "input": "4 2\n3 2 1 5", "output": "3" },
+      { "input": "1 1\n100", "output": "100" },
+      { "input": "5 5\n1 2 3 4 5", "output": "1" },
+      { "input": "3 1\n-1 -5 -2", "output": "-1" }
+    ]
+  },
+  {
+    "id": "spiral-matrix",
+    "testCases": [
+      { "input": "3 3\n1 2 3\n4 5 6\n7 8 9", "output": "1 2 3 6 9 8 7 4 5" },
+      { "input": "3 4\n1 2 3 4\n5 6 7 8\n9 10 11 12", "output": "1 2 3 4 8 12 11 10 9 5 6 7" },
+      { "input": "1 1\n5", "output": "5" },
+      { "input": "2 2\n1 2\n3 4", "output": "1 2 4 3" },
+      { "input": "5 1\n1\n2\n3\n4\n5", "output": "1 2 3 4 5" }
+    ]
+  },
+  {
+    "id": "search-rotated-array",
+    "testCases": [
+      { "input": "7 0\n4 5 6 7 0 1 2", "output": "4" },
+      { "input": "7 3\n4 5 6 7 0 1 2", "output": "-1" },
+      { "input": "1 0\n0", "output": "0" },
+      { "input": "2 1\n1 3", "output": "0" },
+      { "input": "5 2\n3 4 5 1 2", "output": "4" }
+    ]
+  },
+  {
+    "id": "longest-increasing-subsequence",
+    "testCases": [
+      { "input": "8\n10 9 2 5 3 7 101 18", "output": "4" },
+      { "input": "4\n7 7 7 7", "output": "1" },
+      { "input": "1\n5", "output": "1" },
+      { "input": "5\n1 2 3 4 5", "output": "5" },
+      { "input": "5\n5 4 3 2 1", "output": "1" }
+    ]
+  },
+  {
+    "id": "word-search-grid",
+    "testCases": [
+      { "input": "3 4 ABCE\nABCE\nSFCS\nADEE", "output": "true" },
+      { "input": "3 4 SEE\nABCE\nSFCS\nADEE", "output": "true" },
+      { "input": "1 1 A\nA", "output": "true" },
+      { "input": "2 2 ABCD\nAB\nCD", "output": "false" },
+      { "input": "3 3 ABAC\nABA\nBAC\nCAB", "output": "true" }
+    ]
+  },
+  {
+    "id": "find-duplicate-number",
+    "testCases": [
+      { "input": "5\n1 3 4 2 2", "output": "2" },
+      { "input": "5\n3 1 3 4 2", "output": "3" },
+      { "input": "2\n1 1", "output": "1" },
+      { "input": "4\n1 1 2 3", "output": "1" },
+      { "input": "6\n5 4 3 2 1 5", "output": "5" }
+    ]
+  },
+  {
+    "id": "sliding-window-maximum",
+    "testCases": [
+      { "input": "8 3\n1 3 -1 -3 5 3 6 7", "output": "3 3 5 5 6 7" },
+      { "input": "1 1\n1", "output": "1" },
+      { "input": "4 4\n1 2 3 4", "output": "4" },
+      { "input": "5 2\n5 4 3 2 1", "output": "5 4 3 2" },
+      { "input": "6 3\n1 1 1 1 1 1", "output": "1 1 1 1" }
+    ]
+  },
+  {
+    "id": "serialize-deserialize-binary-tree",
+    "testCases": [
+      { "input": "3\n1 2 3", "output": "6" },
+      { "input": "5\n-10 9 20 -1 -1 15 7", "output": "42" },
+      { "input": "1\n5", "output": "5" },
+      { "input": "3\n-2 -1 -3", "output": "-1" },
+      { "input": "7\n1 2 3 4 5 6 7", "output": "18" }
+    ]
+  },
+  {
+    "id": "shortest-palindrome-kmp",
+    "testCases": [
+      { "input": "aacecaaa", "output": "aaacecaaa" },
+      { "input": "abcd", "output": "dcbabcd" },
+      { "input": "a", "output": "a" },
+      { "input": "", "output": "" },
+      { "input": "race", "output": "ecarace" }
+    ]
+  },
+  {
+    "id": "minimum-window-subsequence",
+    "testCases": [
+      { "input": "(()", "output": "2" },
+      { "input": ")()())", "output": "4" },
+      { "input": "()(())", "output": "6" },
+      { "input": "((()))", "output": "6" },
+      { "input": "", "output": "0" }
+    ]
+  },
+  {
+    "id": "regular-expression-matching",
+    "testCases": [
+      { "input": "aa\na*", "output": "true" },
+      { "input": "ab\n.*", "output": "true" },
+      { "input": "aab\nc*a*b", "output": "true" },
+      { "input": "mississippi\nmis*is*p*.", "output": "false" },
+      { "input": "a\n.", "output": "true" }
+    ]
+  },
+  {
+    "id": "n-queens-solver",
+    "testCases": [
+      { "input": "4", "output": "2" },
+      { "input": "1", "output": "1" },
+      { "input": "2", "output": "0" },
+      { "input": "3", "output": "0" },
+      { "input": "8", "output": "92" }
+    ]
+  }
+]

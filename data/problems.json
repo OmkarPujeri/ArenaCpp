@@ -1,0 +1,902 @@
+[
+  {
+    "id": "missing-element-finder",
+    "title": "The Mystery of the Missing Scout",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "In a highly organized military training camp, a unit of N scouts is assigned unique identification numbers ranging from 1 to N. Every morning, the commander performs a mandatory roll call to ensure all personnel are accounted for. Today, however, the atmosphere is tense as only N-1 scouts have reported for duty. One identification number is noticeably absent from the list. Your mission is to assist the commander by scanning the list of present IDs and identifying exactly which scout is missing. Because the list is large, you must find a way to identify the missing number quickly and efficiently without using much extra memory.",
+    "inputFormat": "The first line of input contains a single integer N, representing the total number of scouts that should be present. The second line contains N-1 space-separated integers, which are the unique identification numbers of the scouts who actually attended the roll call.",
+    "outputFormat": "Print a single integer representing the identification number of the scout who is missing from the sequence.",
+    "example": "Input:\n5\n1 2 4 5\n\nOutput:\n3\n\nExplanation: The total number of scouts expected was 5 (IDs 1, 2, 3, 4, 5). Looking at the provided list, the number 3 is the only one not present.",
+    "examples": [
+      {
+        "input": "5\n1 2 4 5",
+        "output": "3",
+        "explanation": "The total number of scouts expected was 5 (IDs 1, 2, 3, 4, 5). Looking at the provided list, the number 3 is the only one not present."
+      }
+    ],
+    "constraints": "N is between 2 and 100,000. Each scout ID is unique and falls between 1 and N."
+  },
+  {
+    "id": "string-char-frequency",
+    "title": "The Unique Frequency Challenge",
+    "difficulty": "Easy",
+    "topic": "String",
+    "description": "You are analyzing a secret transmission consisting of a string of lowercase English letters. To verify the integrity of the data, the transmission must follow a specific 'Unique Frequency' rule. This rule states that every distinct character present in the string must appear a unique number of times. For instance, if the letter 'a' appears 3 times, no other letter in the string is allowed to appear exactly 3 times. If every character has a count that is different from every other character's count, the string is considered valid. You need to write a program that checks this property and helps the team determine if the transmission is intact or corrupted.",
+    "inputFormat": "A single line containing the string S, which consists only of lowercase English alphabets.",
+    "outputFormat": "Print 'true' if the frequency of every distinct character in the string is unique. Otherwise, print 'false'.",
+    "example": "Input:\naabbb\n\nOutput:\ntrue\n\nExplanation: In this string, 'a' occurs 2 times and 'b' occurs 3 times. Since 2 and 3 are different frequencies, the result is true.",
+    "examples": [
+      {
+        "input": "aabbb",
+        "output": "true",
+        "explanation": "In this string, 'a' occurs 2 times and 'b' occurs 3 times. Since 2 and 3 are different frequencies, the result is true."
+      }
+    ],
+    "constraints": "The length of the string is between 1 and 1000 characters. The string only contains characters from 'a' to 'z'."
+  },
+  {
+    "id": "prefix-sum-equilibrium",
+    "title": "Searching for the Equilibrium Point",
+    "difficulty": "Easy",
+    "topic": "Prefix Sum",
+    "description": "An equilibrium index in an array is a very special position where the sum of all elements to its left is exactly equal to the sum of all elements to its right. Imagine a balance scale where the index 'i' is the pivot point; the total 'weight' of all numbers from index 0 to i-1 must perfectly match the total 'weight' of all numbers from index i+1 to N-1. If the index is at the very start (0), the left sum is considered to be 0. Similarly, if the index is at the very end (N-1), the right sum is 0. Your task is to find the very first (lowest) index in the array that satisfies this balance condition.",
+    "inputFormat": "The first line contains an integer N, which is the number of elements in the array. The second line contains N space-separated integers representing the elements of the array.",
+    "outputFormat": "Print the 0-based index of the first equilibrium point found in the array. If no such index exists where the left and right sums are equal, print -1.",
+    "example": "Input:\n7\n-7 1 5 2 -4 3 0\n\nOutput:\n3\n\nExplanation: At index 3, the left sum is (-7 + 1 + 5) = -1. The right sum is (-4 + 3 + 0) = -1. Since they are equal, 3 is the equilibrium index.",
+    "examples": [
+      {
+        "input": "7\n-7 1 5 2 -4 3 0",
+        "output": "3",
+        "explanation": "At index 3, the left sum is (-7 + 1 + 5) = -1. The right sum is (-4 + 3 + 0) = -1. Since they are equal, 3 is the equilibrium index."
+      }
+    ],
+    "constraints": "N is between 1 and 100,000. Each element in the array is between -10,000 and 10,000."
+  },
+  {
+    "id": "valid-anagram-pair",
+    "title": "The Anagram Verification Test",
+    "difficulty": "Easy",
+    "topic": "Hashing",
+    "description": "In the world of linguistics, an anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. For example, the words 'listen' and 'silent' are anagrams because they use the same letters the same number of times. You are given two strings, 's' and 't', and you must determine if they are anagrams of each other. This means 't' must be a perfect rearrangement of 's'—no extra letters, no missing letters, and the exact same character counts for every letter of the alphabet.",
+    "inputFormat": "The input consists of two lines. The first line contains the string 's' and the second line contains the string 't'. Both strings consist of lowercase English letters.",
+    "outputFormat": "Print 'true' if the second string is an anagram of the first string, and print 'false' if it is not.",
+    "example": "Input:\nanagram\nnagaram\n\nOutput:\ntrue\n\nExplanation: Both strings contain three 'a's, one 'n', one 'g', one 'r', and one 'm'. Since the character counts match perfectly, they are anagrams.",
+    "examples": [
+      {
+        "input": "anagram\nnagaram",
+        "output": "true",
+        "explanation": "Both strings contain three 'a's, one 'n', one 'g', one 'r', and one 'm'. Since the character counts match perfectly, they are anagrams."
+      }
+    ],
+    "constraints": "The length of both strings is between 1 and 50,000 characters."
+  },
+  {
+    "id": "move-zeroes-end",
+    "title": "The Zero Migration Protocol",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "You are managing a data stream represented by an integer array. For technical reasons, all '0' values in this array are considered inactive and must be moved to the very end of the sequence to clean up the active data. However, there is a catch: you must maintain the relative order of all the non-zero (active) elements exactly as they appeared in the original array. Furthermore, you are not allowed to create a copy of the array or use significant extra memory; you must perform this 'migration' in-place by swapping or shifting elements within the existing array.",
+    "inputFormat": "The first line contains an integer N, the size of the array. The second line contains N space-separated integers which may include multiple zeroes.",
+    "outputFormat": "Print the modified array elements on a single line, separated by spaces, with all zeroes shifted to the end.",
+    "example": "Input:\n5\n0 1 0 3 12\n\nOutput:\n1 3 12 0 0\n\nExplanation: The non-zero numbers 1, 3, and 12 maintain their relative order, while the two zeroes are pushed to the end of the array.",
+    "examples": [
+      {
+        "input": "5\n0 1 0 3 12",
+        "output": "1 3 12 0 0",
+        "explanation": "The non-zero numbers 1, 3, and 12 maintain their relative order, while the two zeroes are pushed to the end of the array."
+      }
+    ],
+    "constraints": "N is between 1 and 10,000. Elements can range from very small negative integers to very large positive integers."
+  },
+  {
+    "id": "max-consecutive-ones",
+    "title": "Finding the Longest Binary Streak",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "You are given a binary array, which is a specialized list containing only the digits 0 and 1. Your task is to analyze this data and find the 'longest streak' or maximum number of consecutive 1s that appear in the sequence without being interrupted by a 0. This is a common problem in data processing and signal analysis where you need to identify the longest continuous period of active signals (1s) amidst background noise (0s).",
+    "inputFormat": "The first line contains an integer N, the total number of elements in the binary array. The second line contains N space-separated binary integers (either 0 or 1).",
+    "outputFormat": "Print a single integer that represents the length of the longest contiguous segment consisting entirely of 1s.",
+    "example": "Input:\n6\n1 1 0 1 1 1\n\nOutput:\n3\n\nExplanation: The first streak of 1s has a length of 2. The second streak has a length of 3. The maximum consecutive count is therefore 3.",
+    "examples": [
+      {
+        "input": "6\n1 1 0 1 1 1",
+        "output": "3",
+        "explanation": "The first streak of 1s has a length of 2. The second streak has a length of 3. The maximum consecutive count is therefore 3."
+      }
+    ],
+    "constraints": "N is between 1 and 100,000. Every element in the array is guaranteed to be either 0 or 1."
+  },
+  {
+    "id": "binary-search-insert",
+    "title": "The Search and Insert Position",
+    "difficulty": "Easy",
+    "topic": "Searching",
+    "description": "You are given a sorted array of distinct integers, meaning the numbers are already arranged from smallest to largest and no number repeats. You are also given a target value, K. Your goal is to find the 0-based index where K exists in the array. However, if the target K is not present in the array, you must instead determine the index where it would be placed if it were inserted while still keeping the entire array in sorted order. To pass this challenge, you must use an efficient searching algorithm that runs in logarithmic time (O(log N)).",
+    "inputFormat": "The first line contains an integer N, the number of elements. The second line contains N sorted distinct integers. The third line contains the target integer K.",
+    "outputFormat": "Print a single integer representing the 0-based index of the target if found, or its intended insertion position if it is not present.",
+    "example": "Input:\n4\n1 3 5 6\n2\n\nOutput:\n1\n\nExplanation: The target 2 is not in the array. If we were to insert 2 into [1, 3, 5, 6], it would go between 1 and 3, which is index 1.",
+    "examples": [
+      {
+        "input": "4\n1 3 5 6\n2",
+        "output": "1",
+        "explanation": "The target 2 is not in the array. If we were to insert 2 into [1, 3, 5, 6], it would go between 1 and 3, which is index 1."
+      }
+    ],
+    "constraints": "N is between 1 and 10,000. Elements and target values are between -10,000 and 10,000."
+  },
+  {
+    "id": "palindrome-number-logic",
+    "title": "The Palindrome Integer Test",
+    "difficulty": "Easy",
+    "topic": "Recursion",
+    "description": "An integer is considered a palindrome if it reads exactly the same forward as it does backward. For example, 121 is a palindrome, but 123 is not. Interestingly, negative numbers like -121 are not palindromes because they read as 121- from right to left. Your challenge is to determine if a given integer N is a palindrome. There is a specific constraint for this problem: you are strictly forbidden from converting the integer into a string. You must use mathematical logic (like reversing the digits) to solve this.",
+    "inputFormat": "A single integer N, which can be positive, negative, or zero.",
+    "outputFormat": "Print 'true' if the integer is a palindrome, and 'false' otherwise.",
+    "example": "Input:\n121\n\nOutput:\ntrue\n\nExplanation: 121 reads the same from left to right and right to left, making it a valid palindrome.",
+    "examples": [
+      {
+        "input": "121",
+        "output": "true",
+        "explanation": "121 reads the same from left to right and right to left, making it a valid palindrome."
+      }
+    ],
+    "constraints": "N is a 32-bit signed integer, ranging from -2,147,483,648 to 2,147,483,647."
+  },
+  {
+    "id": "remove-element-val",
+    "title": "The Targeted Element Removal",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "You are given an integer array and a specific target value called 'val'. Your task is to remove every single occurrence of 'val' from the array. This removal must be done 'in-place', meaning you modify the original array directly rather than creating a new one. The order of the remaining elements does not matter. After you have cleared out all instances of 'val', you must return the new length of the array representing how many valid elements are left.",
+    "inputFormat": "The first line contains N, the number of elements. The second line contains N space-separated integers. The third line contains the integer 'val' that needs to be removed.",
+    "outputFormat": "Print a single integer representing the new length of the array after all instances of 'val' have been removed.",
+    "example": "Input:\n4\n3 2 2 3\n3\n\nOutput:\n2\n\nExplanation: After removing all occurrences of 3, the array contains two elements (the two 2s). The new length is 2.",
+    "examples": [
+      {
+        "input": "4\n3 2 2 3\n3",
+        "output": "2",
+        "explanation": "After removing all occurrences of 3, the array contains two elements (the two 2s). The new length is 2."
+      }
+    ],
+    "constraints": "N is between 0 and 100. Elements and 'val' are between 0 and 100."
+  },
+  {
+    "id": "valid-perfect-square",
+    "title": "The Perfect Square Authenticator",
+    "difficulty": "Easy",
+    "topic": "Searching",
+    "description": "A perfect square is a positive integer that is the product of some integer with itself. For example, 16 is a perfect square because 4 * 4 = 16. You are given a positive integer N and must determine if it is a perfect square. To make this more interesting, you are strictly forbidden from using any built-in math library functions such as 'sqrt()' or the exponentiation operator (**). You must find the answer using basic arithmetic and logic, such as binary search or iterative methods.",
+    "inputFormat": "A single positive integer N representing the number you need to check.",
+    "outputFormat": "Print 'true' if the number N is a perfect square, otherwise print 'false'.",
+    "example": "Input:\n16\n\nOutput:\ntrue\n\nExplanation: Since 4 multiplied by 4 is 16, it is a perfect square.",
+    "examples": [
+      {
+        "input": "16",
+        "output": "true",
+        "explanation": "Since 4 multiplied by 4 is 16, it is a perfect square."
+      }
+    ],
+    "constraints": "N is a positive integer between 1 and 2,147,483,647."
+  },
+  {
+    "id": "rotting-oranges-bfs",
+    "title": "The Rotting Contagion",
+    "difficulty": "Medium",
+    "topic": "Graphs",
+    "description": "You are presented with an R x C grid representing an orange crate. Each cell can have one of three values: 0 (empty), 1 (a fresh orange), or 2 (a rotten orange). Every minute that passes, any fresh orange that is directly adjacent (up, down, left, or right) to a rotten orange becomes rotten itself due to the spread of mold. Your goal is to determine the minimum number of minutes that must elapse until no fresh oranges remain in the crate. If it is impossible to rot all fresh oranges (for example, if a fresh orange is completely isolated by empty spaces), you must return -1.",
+    "inputFormat": "The first line contains two integers, R and C, representing the grid dimensions. The next R lines each contain C integers (0, 1, or 2).",
+    "outputFormat": "Print a single integer representing the minimum minutes required, or -1 if some oranges stay fresh forever.",
+    "example": "Input:\n3 3\n2 1 1\n1 1 0\n0 1 1\n\nOutput:\n4\n\nExplanation: The rot spreads from the top-left corner. It takes 4 minutes for the contagion to reach the orange in the bottom-right corner.",
+    "examples": [
+      {
+        "input": "3 3\n2 1 1\n1 1 0\n0 1 1",
+        "output": "4",
+        "explanation": "The rot spreads from the top-left corner. It takes 4 minutes for the contagion to reach the orange in the bottom-right corner."
+      }
+    ],
+    "constraints": "R and C are between 1 and 10. The total number of cells is small, allowing for a Breadth-First Search (BFS) approach."
+  },
+  {
+    "id": "longest-palindromic-substring",
+    "title": "The Palindromic Span Search",
+    "difficulty": "Medium",
+    "topic": "String",
+    "description": "A palindrome is a word or sequence that reads the same backward as forward. Given a string S, your objective is to identify the longest contiguous substring within S that is a palindrome. For instance, in the string 'babad', both 'bab' and 'aba' are valid palindromes of length 3. You should return the actual substring itself. If there are multiple palindromic substrings with the same maximum length, you can return any one of them. This problem tests your ability to expand around centers or use dynamic programming to track symmetrical patterns.",
+    "inputFormat": "A single line containing the string S, consisting of digits and English letters.",
+    "outputFormat": "Print the longest contiguous palindromic substring found within S.",
+    "example": "Input:\nbabad\n\nOutput:\nbab\n\nExplanation: 'aba' is also a correct answer. The longest possible palindromic length here is 3.",
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "'aba' is also a correct answer. The longest possible palindromic length here is 3."
+      }
+    ],
+    "constraints": "The length of S is between 1 and 1000 characters."
+  },
+  {
+    "id": "trapping-rain-water",
+    "title": "The Rainwater Harvest Volume",
+    "difficulty": "Hard",
+    "topic": "Array",
+    "description": "Imagine an elevation map where each element in an array represents the height of a vertical bar with a width of 1. After a heavy rainstorm, water gets trapped between these bars. The amount of water trapped at any given position depends on the height of the tallest bars to its left and right. Your task is to calculate the total volume of water that remains trapped across the entire map. This is a complex problem that requires you to think about boundaries and relative heights, often solved efficiently using two pointers or a monotonic stack.",
+    "inputFormat": "The first line contains an integer N, the number of bars. The second line contains N space-separated non-negative integers representing the heights.",
+    "outputFormat": "Print a single integer representing the total units of trapped rainwater.",
+    "example": "Input:\n12\n0 1 0 2 1 0 1 3 2 1 2 1\n\nOutput:\n6\n\nExplanation: Water is trapped in the 'valleys' between the higher peaks. Summing up the trapped units at each index gives a total of 6.",
+    "examples": [
+      {
+        "input": "12\n0 1 0 2 1 0 1 3 2 1 2 1",
+        "output": "6",
+        "explanation": "Water is trapped in the 'valleys' between the higher peaks. Summing up the trapped units at each index gives a total of 6."
+      }
+    ],
+    "constraints": "N is between 1 and 20,000. Each bar height is between 0 and 100,000."
+  },
+  {
+    "id": "median-two-sorted-arrays",
+    "title": "The Median of Merged Sequences",
+    "difficulty": "Hard",
+    "topic": "Searching",
+    "description": "You are given two separate sorted arrays, 'nums1' of size M and 'nums2' of size N. Your goal is to find the median of the two combined arrays. The median is the middle element if the total size is odd, or the average of the two middle elements if the total size is even. The catch is that you must solve this problem with a time complexity of O(log(M+N)), meaning you cannot simply merge the arrays and sort them. You must find a way to partition the two arrays such that you find the middle point through binary search logic.",
+    "inputFormat": "The first line contains the size M followed by M sorted integers. The second line contains the size N followed by N sorted integers.",
+    "outputFormat": "Print the median as a floating-point number (e.g., 2.0 or 2.5).",
+    "example": "Input:\n2 1 3\n1 2\n\nOutput:\n2.0\n\nExplanation: The combined sorted array would be [1, 2, 3]. The middle element is 2.0.",
+    "examples": [
+      {
+        "input": "2 1 3\n1 2",
+        "output": "2.0",
+        "explanation": "The combined sorted array would be [1, 2, 3]. The middle element is 2.0."
+      }
+    ],
+    "constraints": "M and N are between 0 and 1000. The sum M+N is between 1 and 2000."
+  },
+  {
+    "id": "word-break-ii-recursion",
+    "title": "The Sentence Reconstruction Engine",
+    "difficulty": "Hard",
+    "topic": "Recursion",
+    "description": "Given a string S and a dictionary of valid words, your task is to add spaces into S to construct every possible sentence where each word is a valid member of the dictionary. You need to return all such possible sentences. This problem often involves deep exploration of the string (backtracking) combined with memoization to avoid re-solving the same segments multiple times. If no valid sentences can be formed, the output should be empty.",
+    "inputFormat": "The first line contains the string S. The second line contains an integer K, the number of words in the dictionary. The third line contains K space-separated dictionary words.",
+    "outputFormat": "Print each possible sentence on a new line. The order of sentences does not matter.",
+    "example": "Input:\ncatsanddog\n5\ncat cats and sand dog\n\nOutput:\ncats and dog\ncat sand dog\n\nExplanation: Both sentences use valid dictionary words to completely represent the original string.",
+    "examples": [
+      {
+        "input": "catsanddog\n5\ncat cats and sand dog",
+        "output": "cats and dog\ncat sand dog",
+        "explanation": "Both sentences use valid dictionary words to completely represent the original string."
+      }
+    ],
+    "constraints": "The length of S is up to 20. The dictionary contains up to 100 words."
+  },
+  {
+    "id": "minimum-window-substring",
+    "title": "The Minimum Window Substring",
+    "difficulty": "Hard",
+    "topic": "Sliding Window",
+    "description": "You are given two strings, 's' and 't'. You need to find the shortest contiguous substring in 's' that contains every single character found in 't', including duplicates. If 't' has two 'A's, your window must contain at least two 'A's. If no such window exists, return an empty string. This is a high-performance sliding window problem where you must carefully manage character frequencies and window boundaries to ensure you find the absolute minimum length.",
+    "inputFormat": "The first line contains the string 's'. The second line contains the string 't'.",
+    "outputFormat": "Print the shortest substring of 's' that satisfies the condition.",
+    "example": "Input:\nADOBECODEBANC\nABC\n\nOutput:\nBANC\n\nExplanation: 'BANC' is the shortest segment of the original string that contains 'A', 'B', and 'C'.",
+    "examples": [
+      {
+        "input": "ADOBECODEBANC\nABC",
+        "output": "BANC",
+        "explanation": "'BANC' is the shortest segment of the original string that contains 'A', 'B', and 'C'."
+      }
+    ],
+    "constraints": "The lengths of 's' and 't' can be up to 100,000 characters."
+  },
+  {
+    "id": "edit-distance-dp",
+    "title": "The String Transformation Cost",
+    "difficulty": "Hard",
+    "topic": "Dynamic Programming",
+    "description": "In computational linguistics, the edit distance (or Levenshtein distance) is a way of quantifying how dissimilar two strings are. You are given two words, 'word1' and 'word2'. You want to find the minimum number of operations required to convert 'word1' into 'word2'. You are allowed three types of operations: inserting a character, deleting a character, or replacing one character with another. Each operation counts as 1. Your goal is to find the most efficient path of transformation.",
+    "inputFormat": "The first line contains word1. The second line contains word2.",
+    "outputFormat": "Print a single integer representing the minimum number of operations required.",
+    "example": "Input:\nhorse\nros\n\nOutput:\n3\n\nExplanation: 1. Replace 'h' with 'r' (rorse). 2. Remove 'r' (rose). 3. Remove 'e' (ros). Total = 3.",
+    "examples": [
+      {
+        "input": "horse\nros",
+        "output": "3",
+        "explanation": "1. Replace 'h' with 'r' (rorse). 2. Remove 'r' (rose). 3. Remove 'e' (ros). Total = 3."
+      }
+    ],
+    "constraints": "The length of each word is between 0 and 500."
+  },
+  {
+    "id": "sudoku-solver-hard",
+    "title": "The Ultimate Sudoku Solver",
+    "difficulty": "Hard",
+    "topic": "Recursion",
+    "description": "Sudoku is a logic-based, combinatorial number-placement puzzle. The objective is to fill a 9x9 grid with digits so that each column, each row, and each of the nine 3x3 subgrids that compose the grid contain all of the digits from 1 to 9. You are given a partially filled board where '0' represents an empty cell. Your task is to write a program that automatically completes the board. You can assume that every input board provided will have exactly one unique solution.",
+    "inputFormat": "9 lines, each containing 9 space-separated integers representing the initial Sudoku board.",
+    "outputFormat": "Print the completed 9x9 grid with all empty cells filled correctly.",
+    "example": "Input:\n(9x9 grid with 0s)\n\nOutput:\n(Completed 9x9 grid)\n\nExplanation: All rows, columns, and 3x3 boxes now contain unique digits from 1 to 9.",
+    "examples": [
+      {
+        "input": "(9x9 grid with 0s)",
+        "output": "(Completed 9x9 grid)",
+        "explanation": "All rows, columns, and 3x3 boxes now contain unique digits from 1 to 9."
+      }
+    ],
+    "constraints": "The input board is valid and has one unique solution."
+  },
+  {
+    "id": "largest-rectangle-histogram",
+    "title": "The Maximum Histogram Rectangle",
+    "difficulty": "Hard",
+    "topic": "Array",
+    "description": "You are given an array of integers representing a histogram where each bar has a width of 1. You need to find the area of the largest rectangle that can be formed within the bounds of this histogram. A rectangle can span multiple bars as long as its height does not exceed the height of the shortest bar it covers. This is a challenging problem that usually requires a linear time solution using a stack to keep track of heights and their possible widths.",
+    "inputFormat": "The first line contains N, the number of bars. The second line contains N space-separated integers representing heights.",
+    "outputFormat": "Print a single integer representing the area of the largest possible rectangle.",
+    "example": "Input:\n6\n2 1 5 6 2 3\n\nOutput:\n10\n\nExplanation: The largest rectangle is formed by the bars with heights 5 and 6. The width is 2, so the area is 5 * 2 = 10.",
+    "examples": [
+      {
+        "input": "6\n2 1 5 6 2 3",
+        "output": "10",
+        "explanation": "The largest rectangle is formed by the bars with heights 5 and 6. The width is 2, so the area is 5 * 2 = 10."
+      }
+    ],
+    "constraints": "N is between 1 and 100,000. Individual bar heights are between 0 and 10,000."
+  },
+  {
+    "id": "merge-k-sorted-lists",
+    "title": "The Multi-Way Sorted Merge",
+    "difficulty": "Hard",
+    "topic": "Sorting",
+    "description": "You are given K different sorted integer lists. Your task is to merge all of these individual lists into one single, massive sorted list. While you could combine them all and use a standard sort, the most efficient way is to use a min-priority queue (heap) to always pick the smallest available element from the heads of the K lists. This ensures the merge process is highly optimized for large datasets.",
+    "inputFormat": "The first line contains K, the number of lists. For each of the K lists, the input provides the size of the list followed by its sorted elements.",
+    "outputFormat": "Print all elements of the final merged sorted list separated by spaces.",
+    "example": "Input:\n3\n3 1 4 5\n3 1 3 4\n2 2 6\n\nOutput:\n1 1 2 3 4 4 5 6\n\nExplanation: All elements from the three lists are combined and arranged in non-decreasing order.",
+    "examples": [
+      {
+        "input": "3\n3 1 4 5\n3 1 3 4\n2 2 6",
+        "output": "1 1 2 3 4 4 5 6",
+        "explanation": "All elements from the three lists are combined and arranged in non-decreasing order."
+      }
+    ],
+    "constraints": "K is up to 10,000. The total number of elements across all lists is up to 100,000."
+  },
+  {
+    "id": "rotate-array-k",
+    "title": "The Cyclic Array Rotation",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "In computer graphics and circular buffers, rotating an array is a fundamental operation. You are given an array of size N and an integer K. Your task is to rotate the array to the right by K steps. This means that for each step, the element at the end of the array moves to the front, and everything else shifts one position to the right. While this can be done by creating a new array, the real challenge is to perform this rotation in-place with O(1) extra space, ensuring your memory usage remains constant regardless of the array size.",
+    "inputFormat": "The first line contains two integers, N (array size) and K (number of steps to rotate). The second line contains N space-separated integers representing the array.",
+    "outputFormat": "Print the rotated array elements on a single line, separated by a single space.",
+    "example": "Input:\n7 3\n1 2 3 4 5 6 7\n\nOutput:\n5 6 7 1 2 3 4\n\nExplanation: After 3 rotations, the elements [5, 6, 7] move to the front of the array while preserving their original order.",
+    "examples": [
+      {
+        "input": "7 3\n1 2 3 4 5 6 7",
+        "output": "5 6 7 1 2 3 4",
+        "explanation": "After 3 rotations, the elements [5, 6, 7] move to the front of the array while preserving their original order."
+      }
+    ],
+    "constraints": "N is between 1 and 100,000. K is between 0 and 1,000,000. Elements can be any valid integer."
+  },
+  {
+    "id": "isomorphic-strings",
+    "title": "The String Isomorphism Validator",
+    "difficulty": "Easy",
+    "topic": "Hashing",
+    "description": "Two strings are considered isomorphic if the characters in the first string can be replaced to get the second string. This transformation must follow strict rules: every occurrence of a specific character must map to the same replacement character, and no two distinct characters can map to the same target character. However, a character is allowed to map to itself. This problem tests your ability to create a consistent one-to-one mapping (bijection) between character sets using hash maps or frequency arrays.",
+    "inputFormat": "Two lines, each containing a single string. Both strings are guaranteed to have the same length.",
+    "outputFormat": "Print 'true' if the two strings are isomorphic, otherwise print 'false'.",
+    "example": "Input:\negg\nadd\n\nOutput:\ntrue\n\nExplanation: 'e' maps to 'a' and 'g' maps to 'd'. Since the mapping is consistent and one-to-one, the strings are isomorphic.",
+    "examples": [
+      {
+        "input": "egg\nadd",
+        "output": "true",
+        "explanation": "'e' maps to 'a' and 'g' maps to 'd'. Since the mapping is consistent and one-to-one, the strings are isomorphic."
+      }
+    ],
+    "constraints": "The length of each string is between 1 and 50,000. Strings consist of any valid ASCII characters."
+  },
+  {
+    "id": "buy-sell-stock-i",
+    "title": "The Stock Market Arbitrage",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "You are tracking the price of a specific stock over N days, represented by an array where each value is the price on that day. You want to maximize your profit by choosing exactly one day to buy the stock and one different day in the future to sell it. Note that you cannot sell a stock before you buy it. Your goal is to find the maximum possible profit from such a transaction. If it is impossible to make any profit (i.e., the price only goes down), you should return 0.",
+    "inputFormat": "The first line contains an integer N, the number of days. The second line contains N space-separated integers representing the stock price on each day.",
+    "outputFormat": "Print a single integer representing the maximum profit possible. If no profit can be made, print 0.",
+    "example": "Input:\n6\n7 1 5 3 6 4\n\nOutput:\n5\n\nExplanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6). The profit is 6 - 1 = 5.",
+    "examples": [
+      {
+        "input": "6\n7 1 5 3 6 4",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). The profit is 6 - 1 = 5."
+      }
+    ],
+    "constraints": "N is between 1 and 100,000. Individual prices are between 0 and 10,000."
+  },
+  {
+    "id": "valid-parentheses-simple",
+    "title": "The Balanced Bracket Sequence",
+    "difficulty": "Easy",
+    "topic": "Stack",
+    "description": "In programming language parsers, ensuring that brackets are correctly balanced is critical. You are given a string containing only the characters '(', ')', '{', '}', '[' and ']'. Your task is to determine if the input string is valid. A string is valid if: 1. Open brackets are closed by the same type of brackets. 2. Open brackets are closed in the correct Last-In-First-Out (LIFO) order. Every closing bracket must have a corresponding opening bracket of the same type that appeared previously.",
+    "inputFormat": "A single string consisting only of the six specified bracket characters.",
+    "outputFormat": "Print 'true' if the brackets are validly balanced, otherwise print 'false'.",
+    "example": "Input:\n()[]{}\n\nOutput:\ntrue\n\nExplanation: Each opening bracket is immediately closed by its corresponding type, following all nesting rules.",
+    "examples": [
+      {
+        "input": "()[]{}",
+        "output": "true",
+        "explanation": "Each opening bracket is immediately closed by its corresponding type, following all nesting rules."
+      }
+    ],
+    "constraints": "The string length is between 1 and 10,000 characters."
+  },
+  {
+    "id": "single-number-bit",
+    "title": "The Solitary Integer",
+    "difficulty": "Easy",
+    "topic": "Bit Manipulation",
+    "description": "You are given a non-empty array of integers where every single element appears exactly twice, except for one solitary element that appears only once. Your objective is to find that unique element. While this can be solved using a hash set, the most elegant and efficient solution uses bitwise XOR operations to cancel out the pairs in linear time with zero extra memory usage.",
+    "inputFormat": "The first line contains an integer N, the number of elements. The second line contains N space-separated integers.",
+    "outputFormat": "Print the single integer that does not have a pair in the array.",
+    "example": "Input:\n5\n4 1 2 1 2\n\nOutput:\n4\n\nExplanation: The numbers 1 and 2 both appear twice. The number 4 appears only once, so it is the answer.",
+    "examples": [
+      {
+        "input": "5\n4 1 2 1 2",
+        "output": "4",
+        "explanation": "The numbers 1 and 2 both appear twice. The number 4 appears only once, so it is the answer."
+      }
+    ],
+    "constraints": "N is between 1 and 30,000. N is always an odd number."
+  },
+  {
+    "id": "merge-sorted-array-inline",
+    "title": "The In-place Array Merger",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "You are given two integer arrays, nums1 and nums2, both of which are already sorted in non-decreasing order. You are also given two integers, M and N, representing the number of actual elements initialized in nums1 and nums2 respectively. Your task is to merge nums2 into nums1 so that the resulting array is still sorted. To accommodate this, nums1 has a total length of M + N, where the last N spaces are initially set to 0 and should be overwritten by the merged data. You must perform this merge in-place.",
+    "inputFormat": "The first line contains M and N. The second line contains M + N integers (nums1). The third line contains N integers (nums2).",
+    "outputFormat": "Print the combined sorted array elements separated by spaces.",
+    "example": "Input:\n3 3\n1 2 3 0 0 0\n2 5 6\n\nOutput:\n1 2 2 3 5 6\n\nExplanation: The elements of both arrays are merged into nums1, keeping the sorted property intact.",
+    "examples": [
+      {
+        "input": "3 3\n1 2 3 0 0 0\n2 5 6",
+        "output": "1 2 2 3 5 6",
+        "explanation": "The elements of both arrays are merged into nums1, keeping the sorted property intact."
+      }
+    ],
+    "constraints": "M and N are both between 0 and 200. Total elements are less than or equal to 400."
+  },
+  {
+    "id": "climbing-stairs",
+    "title": "The Staircase Combinations",
+    "difficulty": "Easy",
+    "topic": "Dynamic Programming",
+    "description": "You are standing at the bottom of a staircase and want to reach the top. The staircase has a total of N steps. Each time you move, you have two options: you can either climb 1 step or 2 steps. Your goal is to calculate how many distinct ways you can reach the very top. This is a classic problem that mirrors the Fibonacci sequence, as the number of ways to reach step N depends on the number of ways you could have reached the two steps immediately below it.",
+    "inputFormat": "A single integer N representing the total number of steps in the staircase.",
+    "outputFormat": "Print a single integer representing the total number of distinct ways to reach the top.",
+    "example": "Input:\n3\n\nOutput:\n3\n\nExplanation: There are three ways: (1+1+1), (1+2), and (2+1).",
+    "examples": [
+      {
+        "input": "3",
+        "output": "3",
+        "explanation": "There are three ways: (1+1+1), (1+2), and (2+1)."
+      }
+    ],
+    "constraints": "N is between 1 and 45. The result will fit in a standard 32-bit integer."
+  },
+  {
+    "id": "pascals-triangle",
+    "title": "Pascal's Triangle Generator",
+    "difficulty": "Easy",
+    "topic": "Array",
+    "description": "Pascal's Triangle is a famous mathematical structure where each number is the sum of the two numbers directly above it in the previous row. The very first row is just the number 1. Given an integer 'numRows', your task is to generate the first 'numRows' of this triangle. This problem requires you to manage nested lists or 2D arrays and apply the iterative addition logic row by row.",
+    "inputFormat": "A single integer representing the number of rows to generate.",
+    "outputFormat": "Print the triangle row by row. Each row should be on a new line with its elements separated by spaces.",
+    "example": "Input:\n3\n\nOutput:\n1\n1 1\n1 2 1\n\nExplanation: Row 1 is 1. Row 2 is 1,1. Row 3 is 1, (1+1), 1 which is 1,2,1.",
+    "examples": [
+      {
+        "input": "3",
+        "output": "1\n1 1\n1 2 1",
+        "explanation": "Row 1 is 1. Row 2 is 1,1. Row 3 is 1, (1+1), 1 which is 1,2,1."
+      }
+    ],
+    "constraints": "The number of rows is between 1 and 30."
+  },
+  {
+    "id": "power-of-two",
+    "title": "The Power of Two Validator",
+    "difficulty": "Easy",
+    "topic": "Bit Manipulation",
+    "description": "An integer N is a power of two if there exists an integer 'x' such that N equals 2 raised to the power of x. Your task is to write a program that determines if a given integer is a power of two. While you could use repeated division, the most efficient method involves a bitwise check: a power of two in binary always has exactly one '1' bit (e.g., 1, 2, 4, 8, 16).",
+    "inputFormat": "A single integer N, which can be positive, negative, or zero.",
+    "outputFormat": "Print 'true' if the number is a power of two, otherwise print 'false'.",
+    "example": "Input:\n16\n\nOutput:\ntrue\n\nExplanation: 16 is 2 to the power of 4, so it is a power of two.",
+    "examples": [
+      {
+        "input": "16",
+        "output": "true",
+        "explanation": "16 is 2 to the power of 4, so it is a power of two."
+      }
+    ],
+    "constraints": "N is a 32-bit signed integer ranging from -2,147,483,648 to 2,147,483,647."
+  },
+  {
+    "id": "reverse-vowels",
+    "title": "The Selective Vowel Inversion",
+    "difficulty": "Easy",
+    "topic": "String",
+    "description": "You are given a string S and your task is to reverse only the vowels within that string while leaving all consonants and other characters in their original positions. For this problem, the vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lowercase and uppercase. This requires identifying the positions of all vowels and swapping them from the outside in (the first vowel with the last, the second with the second-to-last, and so on).",
+    "inputFormat": "A single line containing the string S.",
+    "outputFormat": "Print the modified string where only the vowels have been reversed.",
+    "example": "Input:\nhello\n\nOutput:\nholle\n\nExplanation: The vowels are 'e' and 'o'. When reversed, 'o' takes the place of 'e' and vice versa.",
+    "examples": [
+      {
+        "input": "hello",
+        "output": "holle",
+        "explanation": "The vowels are 'e' and 'o'. When reversed, 'o' takes the place of 'e' and vice versa."
+      }
+    ],
+    "constraints": "The length of S is between 1 and 300,000 characters."
+  },
+  {
+    "id": "three-sum-zero",
+    "title": "The Zero-Sum Triplet Search",
+    "difficulty": "Medium",
+    "topic": "Sorting",
+    "description": "Given an integer array, your goal is to find all unique triplets within the array that add up to exactly zero. A triplet consists of three elements at different indices (i, j, k). The most challenging part of this problem is ensuring that your result set contains no duplicate triplets; even if the same numbers appear multiple times in the input, the output must only list each unique combination once. This is typically solved by sorting the array first and using a fixed pointer with a two-pointer approach for the remaining two elements to efficiently skip duplicates.",
+    "inputFormat": "The first line contains an integer N, the size of the array. The second line contains N space-separated integers.",
+    "outputFormat": "Print each unique triplet on a new line. The three integers in each triplet should be space-separated.",
+    "example": "Input:\n6\n-1 0 1 2 -1 -4\n\nOutput:\n-1 -1 2\n-1 0 1\n\nExplanation: These are the only two unique sets of three numbers in the array that sum to zero.",
+    "examples": [
+      {
+        "input": "6\n-1 0 1 2 -1 -4",
+        "output": "-1 -1 2\n-1 0 1",
+        "explanation": "These are the only two unique sets of three numbers in the array that sum to zero."
+      }
+    ],
+    "constraints": "N is between 3 and 3000. Each element is between -100,000 and 100,000."
+  },
+  {
+    "id": "group-anagrams",
+    "title": "The Anagram Clustering Engine",
+    "difficulty": "Medium",
+    "topic": "Hashing",
+    "description": "You are given a collection of strings and your task is to group them together based on whether they are anagrams of each other. An anagram is formed by taking the letters of one word and rearranging them to form another. For example, 'eat', 'tea', and 'ate' all use the same letters and should be grouped into the same cluster. This problem tests your ability to create a 'representative key' for each string—such as a sorted version of the string or a character frequency count—and use a hash map to collect all strings that share that same key.",
+    "inputFormat": "The first line contains an integer N, the number of strings. The second line contains N space-separated strings.",
+    "outputFormat": "Print each group of anagrams on a new line, with the words in each group separated by spaces.",
+    "example": "Input:\n6\neat tea tan ate nat bat\n\nOutput:\nbat\nnat tan\nate eat tea\n\nExplanation: The words are grouped together because they share the exact same character sets.",
+    "examples": [
+      {
+        "input": "6\neat tea tan ate nat bat",
+        "output": "bat\nnat tan\nate eat tea",
+        "explanation": "The words are grouped together because they share the exact same character sets."
+      }
+    ],
+    "constraints": "N is between 1 and 10,000. Each string has a length between 0 and 100 characters."
+  },
+  {
+    "id": "coin-change-min",
+    "title": "The Minimum Coin Exchange",
+    "difficulty": "Medium",
+    "topic": "Dynamic Programming",
+    "description": "You are given a set of coin denominations (e.g., 1, 2, and 5 units) and a total target amount of money. Your task is to find the absolute minimum number of coins needed to make up that exact amount. You can assume you have an infinite supply of each coin type. If it is impossible to reach the target amount using any combination of the given coins (for example, if you only have 2-unit coins and need to make 3 units), you must return -1. This is a classic optimization problem solved using dynamic programming by building up the solution for every value from 0 to the target.",
+    "inputFormat": "The first line contains K, the number of coin types. The second line contains K space-separated integers representing the denominations. The third line contains the target amount.",
+    "outputFormat": "Print a single integer representing the minimum coins required, or -1 if impossible.",
+    "example": "Input:\n3\n1 2 5\n11\n\nOutput:\n3\n\nExplanation: The target 11 can be reached using two 5-unit coins and one 1-unit coin (5+5+1).",
+    "examples": [
+      {
+        "input": "3\n1 2 5\n11",
+        "output": "3",
+        "explanation": "The target 11 can be reached using two 5-unit coins and one 1-unit coin (5+5+1)."
+      }
+    ],
+    "constraints": "K is between 1 and 12. The target amount is between 0 and 10,000."
+  },
+  {
+    "id": "longest-consecutive-sequence",
+    "title": "The Longest Consecutive Chain",
+    "difficulty": "Medium",
+    "topic": "Hashing",
+    "description": "Given an unsorted list of integers, you need to find the length of the longest sequence of numbers that are consecutive (e.g., 1, 2, 3, 4). The catch is that these numbers can be scattered anywhere in the array and are not necessarily next to each other in the input. To pass this challenge, your algorithm must run in O(N) time. This usually involves using a hash set to store all numbers, then iterating through the set and identifying the start of a sequence (a number X where X-1 does not exist) and counting how far the chain goes.",
+    "inputFormat": "The first line contains an integer N, the number of elements. The second line contains N space-separated integers.",
+    "outputFormat": "Print a single integer representing the length of the longest consecutive sequence found.",
+    "example": "Input:\n6\n100 4 200 1 3 2\n\nOutput:\n4\n\nExplanation: The longest consecutive sequence is [1, 2, 3, 4], which has a length of 4.",
+    "examples": [
+      {
+        "input": "6\n100 4 200 1 3 2",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [1, 2, 3, 4], which has a length of 4."
+      }
+    ],
+    "constraints": "N is between 0 and 100,000. Elements can range from -1,000,000,000 to 1,000,000,000."
+  },
+  {
+    "id": "top-k-frequent-elements",
+    "title": "The High-Frequency Element Discovery",
+    "difficulty": "Medium",
+    "topic": "Hashing",
+    "description": "You are given an array of integers and a value K. Your objective is to find the K most frequent elements in the array. For example, if the number '1' appears five times and the number '2' appears three times, and K is 1, you should return '1'. If there are multiple elements with the same frequency, you can return them in any order. This problem requires counting frequencies using a hash map and then identifying the top entries, often using a heap (priority queue) or bucket sort for optimal performance.",
+    "inputFormat": "The first line contains N (total elements) and K (number of top elements to find). The second line contains N space-separated integers.",
+    "outputFormat": "Print the K most frequent integers separated by spaces.",
+    "example": "Input:\n6 2\n1 1 1 2 2 3\n\nOutput:\n1 2\n\nExplanation: '1' appears 3 times and '2' appears 2 times, making them the top 2 most frequent elements.",
+    "examples": [
+      {
+        "input": "6 2\n1 1 1 2 2 3",
+        "output": "1 2",
+        "explanation": "'1' appears 3 times and '2' appears 2 times, making them the top 2 most frequent elements."
+      }
+    ],
+    "constraints": "N is between 1 and 100,000. K is at least 1 and less than or equal to the number of unique elements."
+  },
+  {
+    "id": "number-of-islands",
+    "title": "The Island Archipelago Cartography",
+    "difficulty": "Medium",
+    "topic": "Graphs",
+    "description": "You are given a 2D grid map where '1' represents land and '0' represents water. An island is defined as a group of '1's that are connected to each other horizontally or vertically (but not diagonally). Each island is completely surrounded by water. Your task is to count the total number of distinct islands present in the grid. This is a fundamental graph problem that can be solved using Depth-First Search (DFS) or Breadth-First Search (BFS) to 'visit' all connected land cells and mark them as seen once an island is discovered.",
+    "inputFormat": "The first line contains M (rows) and N (columns). The next M lines each contain N characters (either '0' or '1').",
+    "outputFormat": "Print a single integer representing the total count of islands.",
+    "example": "Input:\n4 5\n1 1 1 1 0\n1 1 0 1 0\n1 1 0 0 0\n0 0 0 0 0\n\nOutput:\n1\n\nExplanation: All the '1's are connected to each other, forming a single large island.",
+    "examples": [
+      {
+        "input": "4 5\n1 1 1 1 0\n1 1 0 1 0\n1 1 0 0 0\n0 0 0 0 0",
+        "output": "1",
+        "explanation": "All the '1's are connected to each other, forming a single large island."
+      }
+    ],
+    "constraints": "M and N are between 1 and 300. The grid only contains '0' and '1'."
+  },
+  {
+    "id": "generate-parentheses",
+    "title": "The Combinatorial Parentheses Generator",
+    "difficulty": "Medium",
+    "topic": "Recursion",
+    "description": "Given an integer N representing the number of pairs of parentheses, your goal is to generate all possible combinations of well-formed (validly balanced) parentheses. For example, if N is 2, the valid combinations are '(())' and '()()'. This problem is a classic exercise in backtracking, where you recursively build a string by deciding at each step whether to add an opening or a closing parenthesis, while ensuring you never add more closing ones than opening ones at any point.",
+    "inputFormat": "A single integer N representing the number of pairs.",
+    "outputFormat": "Print each unique well-formed string on a new line.",
+    "example": "Input:\n3\n\nOutput:\n((()))\n(()())\n(())()\n()(())\n()()()\n\nExplanation: These are all the possible ways to arrange 3 pairs of parentheses correctly.",
+    "examples": [
+      {
+        "input": "3",
+        "output": "((()))\n(()())\n(())()\n()(())\n()()()",
+        "explanation": "These are all the possible ways to arrange 3 pairs of parentheses correctly."
+      }
+    ],
+    "constraints": "N is between 1 and 8."
+  },
+  {
+    "id": "product-except-self",
+    "title": "The Zero-Division Exclusion Product",
+    "difficulty": "Medium",
+    "topic": "Array",
+    "description": "You are given an integer array of size N. Your task is to produce a new array where each element at index 'i' is the product of all the numbers in the original array except the one at index 'i'. Crucially, you are strictly forbidden from using the division operator. Your solution must run in O(N) time and should ideally use as little extra space as possible (excluding the output array). This is often solved by calculating prefix products from the left and suffix products from the right, then multiplying them together.",
+    "inputFormat": "The first line contains an integer N. The second line contains N space-separated integers.",
+    "outputFormat": "Print N space-separated integers representing the products.",
+    "example": "Input:\n4\n1 2 3 4\n\nOutput:\n24 12 8 6\n\nExplanation: For index 0, the product is 2*3*4=24. For index 1, 1*3*4=12, and so on.",
+    "examples": [
+      {
+        "input": "4\n1 2 3 4",
+        "output": "24 12 8 6",
+        "explanation": "For index 0, the product is 2*3*4=24. For index 1, 1*3*4=12, and so on."
+      }
+    ],
+    "constraints": "N is between 2 and 100,000. Each element is between -30 and 30 to prevent overflow."
+  },
+  {
+    "id": "kth-largest-element",
+    "title": "The Kth Order Statistic Finder",
+    "difficulty": "Medium",
+    "topic": "Sorting",
+    "description": "Given an unsorted array of integers, you need to find the Kth largest element in the array. Note that it is the Kth largest in the sorted order, not the Kth unique element. For example, in [3, 2, 3, 1, 2, 4, 5, 5, 6] with K=4, the 4th largest element is 4. While sorting the entire array is an easy solution, you can achieve better performance using a Min-Heap or the QuickSelect algorithm, which avoids sorting parts of the array that are irrelevant to the Kth position.",
+    "inputFormat": "The first line contains N (total elements) and K (the target position). The second line contains N space-separated integers.",
+    "outputFormat": "Print the value of the Kth largest element.",
+    "example": "Input:\n6 2\n3 2 3 1 2 4 5 5 6\n\nOutput:\n5\n\nExplanation: When sorted as [1, 2, 2, 3, 3, 4, 5, 5, 6], the 2nd largest element is 5.",
+    "examples": [
+      {
+        "input": "6 2\n3 2 3 1 2 4 5 5 6",
+        "output": "5",
+        "explanation": "When sorted as [1, 2, 2, 3, 3, 4, 5, 5, 6], the 2nd largest element is 5."
+      }
+    ],
+    "constraints": "K is between 1 and N, and N is up to 100,000."
+  },
+  {
+    "id": "spiral-matrix",
+    "title": "The Clockwise Spiral Traversal",
+    "difficulty": "Medium",
+    "topic": "Array",
+    "description": "Given an M x N matrix, your task is to return all the elements of the matrix in a clockwise spiral order, starting from the top-left corner. You move right until you hit the boundary, then down, then left, then up, gradually narrowing the boundaries of the 'unvisited' portion of the grid until every single cell has been processed. This problem tests your ability to manage loop boundaries and coordinate movements (right, down, left, up) in a cyclical fashion.",
+    "inputFormat": "The first line contains M (rows) and N (columns). The next M lines each contain N space-separated integers representing the matrix.",
+    "outputFormat": "Print all the matrix elements in spiral order, separated by spaces.",
+    "example": "Input:\n3 3\n1 2 3\n4 5 6\n7 8 9\n\nOutput:\n1 2 3 6 9 8 7 4 5\n\nExplanation: The traversal follows the path: 1->2->3 (top row), then 6->9 (right column), then 8->7 (bottom row), then 4 (left column), and finally 5 (middle).",
+    "examples": [
+      {
+        "input": "3 3\n1 2 3\n4 5 6\n7 8 9",
+        "output": "1 2 3 6 9 8 7 4 5",
+        "explanation": "The traversal follows the path: 1->2->3 (top row), then 6->9 (right column), then 8->7 (bottom row), then 4 (left column), and finally 5 (middle)."
+      }
+    ],
+    "constraints": "M and N are between 1 and 10. The values in the matrix are any valid integers."
+  },
+  {
+    "id": "search-rotated-array",
+    "title": "The Rotated Sorted Array Search",
+    "difficulty": "Medium",
+    "topic": "Searching",
+    "description": "Imagine an integer array that was originally sorted in ascending order. Before being passed to your program, this array was rotated at an unknown pivot index. For example, [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]. You are given this rotated array and a target value. Your goal is to find the index of the target if it exists in the array, or return -1 if it does not. To pass the performance requirements, you must implement an algorithm with O(log N) runtime complexity. This is a variation of binary search where you must first determine which half of the array is still 'normally' sorted before deciding where to search next.",
+    "inputFormat": "The first line contains N (the array size) and the target value. The second line contains N space-separated integers representing the rotated sorted array.",
+    "outputFormat": "Print the 0-based index of the target value, or -1 if the target is not present.",
+    "example": "Input:\n7 0\n4 5 6 7 0 1 2\n\nOutput:\n4\n\nExplanation: The value 0 is located at index 4 in the provided array.",
+    "examples": [
+      {
+        "input": "7 0\n4 5 6 7 0 1 2",
+        "output": "4",
+        "explanation": "The value 0 is located at index 4 in the provided array."
+      }
+    ],
+    "constraints": "N is between 1 and 5,000. All integers in the array are unique."
+  },
+  {
+    "id": "longest-increasing-subsequence",
+    "title": "The Longest Increasing Subsequence",
+    "difficulty": "Medium",
+    "topic": "Dynamic Programming",
+    "description": "Given an integer array, your task is to find the length of the longest strictly increasing subsequence. A subsequence is derived by deleting zero or more elements from the original array without changing the order of the remaining elements. For example, in [10, 9, 2, 5, 3, 7, 101, 18], a valid increasing subsequence is [2, 3, 7, 18], which has a length of 4. This is a classic dynamic programming problem that tests your ability to build optimal solutions from subproblems or use a more advanced O(N log N) approach involving binary search and a tails array.",
+    "inputFormat": "The first line contains an integer N, the size of the array. The second line contains N space-separated integers.",
+    "outputFormat": "Print a single integer representing the maximum length of an increasing subsequence.",
+    "example": "Input:\n8\n10 9 2 5 3 7 101 18\n\nOutput:\n4\n\nExplanation: One such longest increasing subsequence is [2, 3, 7, 18].",
+    "examples": [
+      {
+        "input": "8\n10 9 2 5 3 7 101 18",
+        "output": "4",
+        "explanation": "One such longest increasing subsequence is [2, 3, 7, 18]."
+      }
+    ],
+    "constraints": "N is between 1 and 2,500. Array values can be any valid integer."
+  },
+  {
+    "id": "word-search-grid",
+    "title": "The Grid Word Search",
+    "difficulty": "Medium",
+    "topic": "Recursion",
+    "description": "You are given an M x N grid of characters and a specific target word. Your goal is to determine if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' means cells that are neighbors either horizontally or vertically. You cannot use the same character cell more than once for a single word. This problem is typically solved using backtracking (DFS), where you explore all possible paths starting from every cell that matches the first letter of the target word.",
+    "inputFormat": "The first line contains M (rows), N (columns), and the target word string. The next M lines each contain N space-separated characters.",
+    "outputFormat": "Print 'true' if the word can be found in the grid, otherwise print 'false'.",
+    "example": "Input:\n3 4 ABCE\nS F C S\nA D E E\n\nOutput:\ntrue\n\nExplanation: Starting from 'A' at the bottom-left, you can move up to 'B', then right to 'C' and 'E' to form the word.",
+    "examples": [
+      {
+        "input": "3 4 ABCE\nS F C S\nA D E E",
+        "output": "true",
+        "explanation": "Starting from 'A' at the bottom-left, you can move up to 'B', then right to 'C' and 'E' to form the word."
+      }
+    ],
+    "constraints": "M and N are between 1 and 6. The target word length is between 1 and 15."
+  },
+  {
+    "id": "find-duplicate-number",
+    "title": "The Constant Space Duplicate Finder",
+    "difficulty": "Medium",
+    "topic": "Searching",
+    "description": "You are given an array of N+1 integers where each integer is in the range [1, N] inclusive. According to the Pigeonhole Principle, there must be at least one repeated number in this array. Your task is to find and return this duplicated number. There are two very strict constraints: 1. You must not modify the original array. 2. You must use only constant (O(1)) extra space. This problem is often solved using 'Floyd's Tortoise and Hare' cycle-finding algorithm by treating the array values as pointers to indices.",
+    "inputFormat": "The first line contains the size of the array (N+1). The second line contains N+1 space-separated integers.",
+    "outputFormat": "Print the single duplicated integer found in the array.",
+    "example": "Input:\n5\n1 3 4 2 2\n\nOutput:\n2\n\nExplanation: The number 2 is the only value that appears more than once in the sequence.",
+    "examples": [
+      {
+        "input": "5\n1 3 4 2 2",
+        "output": "2",
+        "explanation": "The number 2 is the only value that appears more than once in the sequence."
+      }
+    ],
+    "constraints": "N is between 1 and 100,000. Only one number is duplicated, but it may appear more than twice."
+  },
+  {
+    "id": "sliding-window-maximum",
+    "title": "The Sliding Window Peak Finder",
+    "difficulty": "Hard",
+    "topic": "Sliding Window",
+    "description": "You are given an array of integers and a sliding window of size K. The window moves from the very beginning of the array to the very end, shifting one position to the right at a time. At each position, you can only see the K numbers currently inside the window. Your goal is to identify the maximum value present in the window at every single step of its journey. To achieve optimal performance for large arrays, you should use a deque (double-ended queue) to keep track of indices in a way that allows you to find the maximum in constant time.",
+    "inputFormat": "The first line contains N (total elements) and K (window size). The second line contains N space-separated integers.",
+    "outputFormat": "Print the maximum value for each window position, separated by spaces.",
+    "example": "Input:\n8 3\n1 3 -1 -3 5 3 6 7\n\nOutput:\n3 3 5 5 6 7\n\nExplanation: For the first window [1, 3, -1], the max is 3. For [3, -1, -3], the max is 3, and so on.",
+    "examples": [
+      {
+        "input": "8 3\n1 3 -1 -3 5 3 6 7",
+        "output": "3 3 5 5 6 7",
+        "explanation": "For the first window [1, 3, -1], the max is 3. For [3, -1, -3], the max is 3, and so on."
+      }
+    ],
+    "constraints": "N is between 1 and 100,000. K is at least 1 and less than or equal to N."
+  },
+  {
+    "id": "serialize-deserialize-binary-tree",
+    "title": "The Binary Tree Maximum Path Sum",
+    "difficulty": "Hard",
+    "topic": "Recursion",
+    "description": "A path in a binary tree is defined as a sequence of nodes where each pair of adjacent nodes has an edge connecting them. A node can only appear once in the sequence. Importantly, the path does not need to pass through the root of the tree. The path sum is the total of all node values along that path. Your task is to find the maximum possible path sum in a given binary tree. This problem requires a recursive approach where each node calculates the maximum contribution it can offer to a path passing through it and a path ending at it.",
+    "inputFormat": "The first line contains N, the total number of nodes. The second line contains N integers representing the level-order traversal of the tree (use -1 for null/empty nodes).",
+    "outputFormat": "Print a single integer representing the maximum path sum found.",
+    "example": "Input:\n3\n1 2 3\n\nOutput:\n6\n\nExplanation: The path 2 -> 1 -> 3 gives the maximum sum of 6.",
+    "examples": [
+      {
+        "input": "3\n1 2 3",
+        "output": "6",
+        "explanation": "The path 2 -> 1 -> 3 gives the maximum sum of 6."
+      }
+    ],
+    "constraints": "The number of nodes is between 1 and 30,000. Node values are between -1,000 and 1,000."
+  },
+  {
+    "id": "shortest-palindrome-kmp",
+    "title": "The Shortest Palindrome Transformation",
+    "difficulty": "Hard",
+    "topic": "String",
+    "description": "You are given a string S. You can convert S into a palindrome by adding characters to the front of it. Your goal is to find and return the shortest possible palindrome you can create using this method. For example, given 'aacecaaa', you can add 'a' to the front to get 'aaacecaaa', which is a palindrome. This problem is effectively asking you to find the longest palindromic prefix of the string, which can be solved efficiently using the KMP algorithm's prefix function logic.",
+    "inputFormat": "A single line containing the string S.",
+    "outputFormat": "Print the resulting shortest palindrome string.",
+    "example": "Input:\naacecaaa\n\nOutput:\naaacecaaa\n\nExplanation: By adding one 'a' to the front, the entire string becomes a palindrome.",
+    "examples": [
+      {
+        "input": "aacecaaa",
+        "output": "aaacecaaa",
+        "explanation": "By adding one 'a' to the front, the entire string becomes a palindrome."
+      }
+    ],
+    "constraints": "The length of S is between 0 and 50,000 characters."
+  },
+  {
+    "id": "minimum-window-subsequence",
+    "title": "The Longest Valid Parentheses Segment",
+    "difficulty": "Hard",
+    "topic": "Dynamic Programming",
+    "description": "Given a string consisting only of the characters '(' and ')', you need to find the length of the longest contiguous substring that forms a valid (well-formed) parentheses sequence. For example, in the string ')()())', the longest valid substring is '()()', which has a length of 4. This problem can be solved using a stack to track indices of unmatched parentheses or using dynamic programming to store the length of the valid sequence ending at each index.",
+    "inputFormat": "A single line containing the string S.",
+    "outputFormat": "Print a single integer representing the length of the longest valid parentheses substring.",
+    "example": "Input:\n)()())\n\nOutput:\n4\n\nExplanation: The valid segment '()()' starts at index 1 and ends at index 4.",
+    "examples": [
+      {
+        "input": ")()())\n",
+        "output": "4",
+        "explanation": "The valid segment '()()' starts at index 1 and ends at index 4."
+      }
+    ],
+    "constraints": "The length of S is between 0 and 30,000 characters."
+  },
+  {
+    "id": "regular-expression-matching",
+    "title": "The Regex Engine Implementation",
+    "difficulty": "Hard",
+    "topic": "Dynamic Programming",
+    "description": "Your task is to implement a basic regular expression matching engine that supports the characters '.' and '*'. The '.' character matches any single character, while the '*' character matches zero or more of the preceding element. The matching must cover the entire input string (it is not a partial match). This is a classic recursive or dynamic programming problem where you must handle the 'zero occurrences' case of the '*' operator very carefully.",
+    "inputFormat": "The first line contains the input string S. The second line contains the pattern string P.",
+    "outputFormat": "Print 'true' if the pattern matches the entire string, otherwise print 'false'.",
+    "example": "Input:\naa\na*\n\nOutput:\ntrue\n\nExplanation: The '*' matches the second 'a', making the pattern cover the entire string 'aa'.",
+    "examples": [
+      {
+        "input": "aa\na*",
+        "output": "true",
+        "explanation": "The '*' matches the second 'a', making the pattern cover the entire string 'aa'."
+      }
+    ],
+    "constraints": "The lengths of S and P are both between 1 and 20. S contains only lowercase letters; P contains letters, '.', and '*'."
+  },
+  {
+    "id": "n-queens-solver",
+    "title": "The N-Queens Placement Puzzle",
+    "difficulty": "Hard",
+    "topic": "Recursion",
+    "description": "The N-Queens puzzle is the famous problem of placing N chess queens on an N x N chessboard so that no two queens threaten each other. This means no two queens can share the same row, column, or diagonal. Given an integer N, your task is to calculate the total number of distinct ways to arrange the queens on the board. This is a classic backtracking problem where you attempt to place a queen row by row and backtrack whenever a conflict is detected.",
+    "inputFormat": "A single integer N representing the size of the board and the number of queens.",
+    "outputFormat": "Print a single integer representing the total number of valid solutions found.",
+    "example": "Input:\n4\n\nOutput:\n2\n\nExplanation: For a 4x4 board, there are exactly 2 unique ways to place 4 queens safely.",
+    "examples": [
+      {
+        "input": "4",
+        "output": "2",
+        "explanation": "For a 4x4 board, there are exactly 2 unique ways to place 4 queens safely."
+      }
+    ],
+    "constraints": "N is between 1 and 9. Small N allows for exhaustive recursive search."
+  }
+]

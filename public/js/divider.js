@@ -4,25 +4,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const leftPanel = document.getElementById('problemPanel');
     const arenaLayout = document.getElementById('arenaLayout');
     
+    if (!resizer || !leftPanel || !arenaLayout) return;
+
     let isResizing = false;
 
     resizer.addEventListener('mousedown', (e) => {
         isResizing = true;
         document.body.style.cursor = 'col-resize';
+        document.body.style.userSelect = 'none'; // Prevent text selection
         resizer.style.background = 'var(--accent)';
-        resizer.style.boxShadow = '0 0 10px var(--accent-glow)';
     });
 
     document.addEventListener('mousemove', (e) => {
         if (!isResizing) return;
         
-        const offsetLeft = arenaLayout.getBoundingClientRect().left;
-        const width = e.clientX - offsetLeft;
+        const containerRect = arenaLayout.getBoundingClientRect();
+        const width = e.clientX - containerRect.left;
         
-        // Boundaries
-        if (width > 300 && width < (arenaLayout.clientWidth - 400)) {
-            leftPanel.style.flex = 'none';
-            leftPanel.style.width = `${width}px`;
+        // Boundaries: min 300px, max (container - 300px)
+        const minWidth = 300;
+        const maxWidth = containerRect.width - 300;
+
+        if (width >= minWidth && width <= maxWidth) {
+            leftPanel.style.flex = `0 0 ${width}px`;
         }
     });
 
@@ -30,17 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isResizing) return;
         isResizing = false;
         document.body.style.cursor = 'default';
+        document.body.style.userSelect = 'auto';
         resizer.style.background = 'var(--border-glass)';
-        resizer.style.boxShadow = 'none';
         
         // Save preference
-        localStorage.setItem('cpp-arena-split', leftPanel.style.width);
+        localStorage.setItem('cpp-arena-split', leftPanel.style.width || leftPanel.style.flexBasis);
     });
 
     // Restore split preference
     const savedWidth = localStorage.getItem('cpp-arena-split');
-    if (savedWidth) {
-        leftPanel.style.flex = 'none';
-        leftPanel.style.width = savedWidth;
+    if (savedWidth && window.innerWidth > 900) {
+        leftPanel.style.flex = `0 0 ${savedWidth}`;
     }
 });

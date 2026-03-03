@@ -127,7 +127,8 @@ function applyFilters() {
  * Format title for display
  */
 function formatTitle(title) {
-    return title || "";
+    if (!title) return "";
+    return title.startsWith("The ") ? title.slice(4) : title;
 }
 
 /**

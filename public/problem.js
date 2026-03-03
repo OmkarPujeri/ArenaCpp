@@ -58,7 +58,9 @@ function sanitize(text) {
  * Format title for display
  */
 function formatTitle(title) {
-    return sanitize(title) || "";
+    if (!title) return "";
+    const clean = sanitize(title);
+    return clean.startsWith("The ") ? clean.slice(4) : clean;
 }
 
 /**
@@ -118,6 +120,8 @@ function renderProblem(p) {
                 const li = document.createElement('li');
                 li.style.marginBottom = '8px';
                 li.style.color = 'var(--text-secondary)';
+                li.style.wordBreak = 'break-word';
+                li.style.overflowWrap = 'break-word';
                 li.innerText = line;
                 ul.appendChild(li);
             });

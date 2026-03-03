@@ -37,11 +37,16 @@ async function initEditor() {
                         run: () => { handleSubmit(); return true; }
                     }
                 ]),
-                EditorView.theme({
-                    "&": { height: "100%", width: "100%" },
-                    ".cm-scroller": { overflow: "auto" },
-                    "&.cm-focused": { outline: "none" }
-                })
+            EditorView.theme({
+                "&": { height: "100%", width: "100%" },
+                ".cm-scroller": { 
+                    overflow: "auto",
+                    height: "100%",
+                    maxHeight: "none"
+                },
+                "&.cm-focused": { outline: "none" }
+            })
+
             ],
             parent: document.getElementById("editor")
         });
@@ -61,6 +66,7 @@ async function initEditor() {
             codeTextarea.style.lineHeight = "1.6";
             codeTextarea.style.outline = "none";
             codeTextarea.style.resize = "none";
+            codeTextarea.style.overflowY = "auto";
             codeTextarea.value = initialCode;
 
             // Basic Tab support for fallback textarea

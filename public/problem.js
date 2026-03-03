@@ -18,11 +18,7 @@ const initialCode = `#include <iostream>\n\nint main() {\n    // Write your code
 
 async function initEditor() {
     try {
-        const { EditorView, basicSetup } = await import("codemirror");
-        const { cpp } = await import("@codemirror/lang-cpp");
-        const { oneDark } = await import("@codemirror/theme-one-dark");
-        const { keymap } = await import("@codemirror/view");
-        const { indentWithTab } = await import("@codemirror/commands");
+        const { EditorView, basicSetup, cpp, oneDark, keymap, indentWithTab } = await import("./js/codemirror.bundle.js");
 
         editor = new EditorView({
             doc: initialCode,
@@ -61,7 +57,23 @@ async function initEditor() {
             codeTextarea.style.border = "none";
             codeTextarea.style.padding = "20px";
             codeTextarea.style.fontFamily = "'JetBrains Mono', monospace";
+            codeTextarea.style.fontSize = "14px";
+            codeTextarea.style.lineHeight = "1.6";
+            codeTextarea.style.outline = "none";
+            codeTextarea.style.resize = "none";
             codeTextarea.value = initialCode;
+
+            // Basic Tab support for fallback textarea
+            codeTextarea.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    const start = codeTextarea.selectionStart;
+                    const end = codeTextarea.selectionEnd;
+                    codeTextarea.value = codeTextarea.value.substring(0, start) + 
+                                       "    " + codeTextarea.value.substring(end);
+                    codeTextarea.selectionStart = codeTextarea.selectionEnd = start + 4;
+                }
+            });
         }
     }
 }

@@ -47,14 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     consoleHeader.addEventListener('click', (e) => {
-        if (e.target !== submitBtn) {
+        if (e.target !== submitBtn && e.target !== document.getElementById('runBtn')) {
             toggleConsole();
         }
     });
 
+    window.addEventListener('arenaToggleConsole', () => {
+        toggleConsole();
+    });
+
     // Handle Verdict Animations & Status Updates
     window.addEventListener('arenaVerdictReceived', (e) => {
-        const { verdict, passed, total } = e.detail;
+        const { verdict, passed, total, isRunMode } = e.detail;
         
         // Auto-expand on verdict
         toggleConsole(true);

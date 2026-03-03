@@ -4,6 +4,103 @@ const problemId = urlParams.get('id');
 
 const problemDetail = document.getElementById('problemDetail');
 const submitBtn = document.getElementById('submitBtn');
+const runBtn = document.getElementById('runBtn');
+const resetBtn = document.getElementById('resetBtn');
+const shortcutsBtn = document.getElementById('shortcutsBtn');
+const shortcutsOverlay = document.getElementById('shortcutsOverlay');
+const closeShortcuts = document.getElementById('closeShortcuts');
+
+/**
+ * Initialize CodeMirror Editor
+ */
+let editor;
+const initialCode = `#include <iostream>\n\nint main() {\n    // Write your code here\n    return 0;\n}\n`;
+
+async function initEditor() {
+    try {
+        const { EditorView, basicSetup } = await import("codemirror");
+        const { cpp } = await import("@codemirror/lang-cpp");
+        const { oneDark } = await import("@codemirror/theme-one-dark");
+        const { keymap } = await import("@codemirror/view");
+        const { indentWithTab } = await import("@codemirror/commands");
+
+        editor = new EditorView({
+            doc: initialCode,
+            extensions: [
+                basicSetup,
+                cpp(),
+                oneDark,
+                keymap.of([
+                    indentWithTab,
+                    {
+                        key: "Ctrl-Enter",
+                        run: () => { handleRun(); return true; }
+                    },
+                    {
+                        key: "Ctrl-Shift-Enter",
+                        run: () => { handleSubmit(); return true; }
+                    }
+                ]),
+                EditorView.theme({
+                    "&": { height: "100%", width: "100%" },
+                    ".cm-scroller": { overflow: "auto" },
+                    "&.cm-focused": { outline: "none" }
+                })
+            ],
+            parent: document.getElementById("editor")
+        });
+    } catch (e) {
+        console.error("CodeMirror failed to load:", e);
+        const codeTextarea = document.getElementById("code");
+        if (codeTextarea) {
+            codeTextarea.style.display = "block";
+            codeTextarea.style.width = "100%";
+            codeTextarea.style.height = "100%";
+            codeTextarea.style.background = "#0B0B0E";
+            codeTextarea.style.color = "#fff";
+            codeTextarea.style.border = "none";
+            codeTextarea.style.padding = "20px";
+            codeTextarea.style.fontFamily = "'JetBrains Mono', monospace";
+            codeTextarea.value = initialCode;
+        }
+    }
+}
+
+// Shortcuts logic
+if (shortcutsBtn) {
+    shortcutsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        shortcutsOverlay.classList.toggle('hidden');
+    });
+}
+if (closeShortcuts) {
+    closeShortcuts.addEventListener('click', () => {
+        shortcutsOverlay.classList.add('hidden');
+    });
+}
+
+// Close shortcuts if clicking outside
+document.addEventListener('click', (e) => {
+    if (shortcutsOverlay && !shortcutsOverlay.contains(e.target) && !shortcutsBtn.contains(e.target)) {
+        shortcutsOverlay.classList.add('hidden');
+    }
+});
+
+// Reset logic
+if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+        if (confirm("Reset code to default?")) {
+            if (editor && typeof editor.dispatch === 'function') {
+                editor.dispatch({
+                    changes: { from: 0, to: editor.state.doc.length, insert: initialCode }
+                });
+            } else {
+                const codeTextarea = document.getElementById("code");
+                if (codeTextarea) codeTextarea.value = initialCode;
+            }
+        }
+    });
+}
 
 /**
  * Fetch specific problem details
@@ -34,14 +131,6 @@ const difficultyBadgeMap = {
     'Medium': 'badge badge-medium',
     'Hard': 'badge badge-hard'
 };
-
-/**
- * Sanitize text by removing $ and other artifacts
- */
-function sanitize(text) {
-    if (!text) return "";
-    return text.replace(/\$/g, '');
-}
 
 /**
  * Sanitize text by removing $ and other artifacts, and converting LaTeX symbols
@@ -182,24 +271,47 @@ function renderProblem(p) {
 }
 
 /**
- * Handle submission with Arena 2.0 console events
+ * Handle run (single testcase)
  */
-submitBtn.addEventListener('click', async () => {
-    const code = document.getElementById('code').value;
+async function handleRun() {
+    await performSubmission(true);
+}
+
+/**
+ * Handle submission (all testcases)
+ */
+async function handleSubmit() {
+    await performSubmission(false);
+}
+
+/**
+ * Perform submission/run logic
+ */
+async function performSubmission(isRunMode = false) {
+    let code = "";
+    if (editor && editor.state) {
+        code = editor.state.doc.toString();
+    } else {
+        const codeTextarea = document.getElementById("code");
+        if (codeTextarea) code = codeTextarea.value;
+    }
+
     const resultBox = document.getElementById('result');
     const verdictText = document.getElementById('verdictText');
     const passedText = document.getElementById('passedText');
     const totalText = document.getElementById('totalText');
     const errorLog = document.getElementById('errorLog');
+    const targetBtn = isRunMode ? runBtn : submitBtn;
 
     if (!code.trim()) {
         alert('Please enter some code.');
         return;
     }
 
-    submitBtn.innerText = 'Compiling...';
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.7';
+    const originalText = targetBtn.innerText;
+    targetBtn.innerText = isRunMode ? 'Running...' : 'Compiling...';
+    targetBtn.disabled = true;
+    targetBtn.style.opacity = '0.7';
 
     // Clear previous results
     resultBox.classList.add('hidden');
@@ -209,7 +321,11 @@ submitBtn.addEventListener('click', async () => {
         const response = await fetch('/api/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ code, problemId })
+            body: JSON.stringify({ 
+                code, 
+                problemId,
+                runMode: isRunMode 
+            })
         });
 
         if (!response.ok) throw new Error("Submission failed");
@@ -221,17 +337,22 @@ submitBtn.addEventListener('click', async () => {
         passedText.textContent = data.passed || 0;
         totalText.textContent = data.total || 0;
 
-        if (data.error) {
-            errorLog.textContent = data.error;
+        if (data.error || data.received) {
+            let log = data.error || "";
+            if (data.verdict === "Wrong Answer" && isRunMode) {
+                log = `Expected:\n${data.expected}\n\nReceived:\n${data.received}`;
+            }
+            errorLog.textContent = log;
             errorLog.classList.remove('hidden');
         }
 
-        // Emit custom event for the Arena Console component to handle animations
+        // Emit custom event
         window.dispatchEvent(new CustomEvent('arenaVerdictReceived', { 
             detail: { 
                 verdict: data.verdict, 
                 passed: data.passed, 
-                total: data.total 
+                total: data.total,
+                isRunMode
             } 
         }));
 
@@ -239,11 +360,28 @@ submitBtn.addEventListener('click', async () => {
         console.error('Submission failed:', err);
         alert('Failed to connect to the arena server.');
     } finally {
-        submitBtn.innerText = 'Submit Code';
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
+        targetBtn.innerText = originalText;
+        targetBtn.disabled = false;
+        targetBtn.style.opacity = '1';
+    }
+}
+
+// Event Listeners for buttons
+submitBtn.addEventListener('click', handleSubmit);
+runBtn.addEventListener('click', handleRun);
+
+// Keyboard Global Shortcuts (Optional fallback)
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'Enter') {
+        if (e.shiftKey) handleSubmit();
+        else handleRun();
+    }
+    if (e.ctrlKey && e.key === '`') {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent('arenaToggleConsole'));
     }
 });
 
 // Initialize
+initEditor();
 fetchProblem();

@@ -52,19 +52,8 @@ function initTopicDropdown() {
         </label>
     `).join('');
 
-    // Add event listeners to labels (dropdown-items) for better click behavior
-    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-            // If click was on checkbox, handle change. If on label, toggle checkbox.
-            const checkbox = item.querySelector('input[type="checkbox"]');
-            if (e.target !== checkbox) {
-                checkbox.checked = !checkbox.checked;
-                checkbox.dispatchEvent(new Event('change', { bubbles: true }));
-            }
-        });
-    });
-
-    document.querySelectorAll('.dropdown-menu input[type="checkbox"]').forEach(checkbox => {
+    // Add event listeners for filter checkboxes
+    document.querySelectorAll('.dropdown-container input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', (e) => {
             const val = e.target.value;
             const isTopic = e.target.closest('#topicDropdown');

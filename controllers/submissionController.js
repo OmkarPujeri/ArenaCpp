@@ -61,7 +61,7 @@ async function runTestCase(outPath, inputPath, expectedOutput, testCaseNumber) {
  * Controller to handle problem submission with improved robustness
  */
 exports.submitCode = async (req, res) => {
-    const { code, problemId } = req.body;
+    const { code, problemId, runMode } = req.body;
 
     if (!code || !problemId) {
         return res.status(400).json({ error: "Code and problemId are required." });
@@ -103,7 +103,10 @@ exports.submitCode = async (req, res) => {
             files.filter(f => f.startsWith('input') && f.endsWith('.txt'))
         );
 
-        const totalTestCases = inputFiles.length;
+        // In Run mode, only use the first test case
+        const targetInputFiles = runMode ? inputFiles.slice(0, 1) : inputFiles;
+        const totalTestCases = targetInputFiles.length;
+
         if (totalTestCases === 0) {
             return res.json({ verdict: "Internal Error", message: "No testcases found" });
         }
@@ -112,7 +115,7 @@ exports.submitCode = async (req, res) => {
 
         // Step 4: Run against test cases
         for (let i = 0; i < totalTestCases; i++) {
-            const inputFileName = inputFiles[i];
+            const inputFileName = targetInputFiles[i];
             const outputFileName = inputFileName.replace('input', 'output');
 
             const inputPath = path.join(testcasesDir, inputFileName);
@@ -139,10 +142,10 @@ exports.submitCode = async (req, res) => {
         // All test cases passed
         const executionTime = Date.now() - startTime;
         return res.json({
-            verdict: "Accepted",
-            totalTestCases,
-            total: totalTestCases,
-            passed,
+            verdict: runMode ? "Passed (Single Test)" : "Accepted",
+            totalTestCases: inputFiles.length, 
+            total: runMode ? 1 : inputFiles.length,
+            passed: runMode ? 1 : passed,
             executionTime
         });
 

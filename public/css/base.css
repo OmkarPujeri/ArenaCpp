@@ -94,3 +94,8 @@ code, pre, .editor-font {
 .arena-glow, .blob {
     display: none; /* Removed gaming glows */
 }
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}

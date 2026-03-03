@@ -4,7 +4,8 @@
   "description": "A basic C++ Online Judge system",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "esbuild src/codemirror-entry.js --bundle --minify --format=esm --outfile=public/js/codemirror.bundle.js"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.20.1",

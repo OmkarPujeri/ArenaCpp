@@ -112,9 +112,15 @@ This project is deployed on Render as a Web Service using Docker.
 # install dependencies
 npm install
 
+# (Optional) Rebuild the editor bundle if needed
+npx esbuild src/codemirror-entry.js --bundle --minify --format=esm --outfile=public/js/codemirror.bundle.js
+
 # start server
 node server.js
 ```
+
+### Editor Bundle
+The IDE (CodeMirror 6) is bundled locally using `esbuild` to ensure a single instance of the editor state and avoid CDN-related version conflicts. This guarantees consistent syntax highlighting and Tab indentation across all environments.
 
 Then open:  
 ```

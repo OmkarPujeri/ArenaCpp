@@ -258,8 +258,12 @@ git clone https://github.com/OmkarPujeri/ArenaCpp.git
 # 2. Install dependencies
 npm install
 
-# 3. Start the server
+# 3. (Optional) Rebuild the editor bundle
+npx esbuild src/codemirror-entry.js --bundle --minify --format=esm --outfile=public/js/codemirror.bundle.js
+
+# 4. Start the server
 node server.js</code></pre>
+            <p style="font-size: 14px; color: var(--text-muted);"><em>Note: If syntax highlighting disappears, re-run the editor bundle command (Step 3).</em></p>
         </section>
 
         <section id="deployment">
@@ -294,7 +298,5 @@ node server.js</code></pre>
             </div>
         </div>
     </footer>
-</body>
-</html>
 </body>
 </html>
